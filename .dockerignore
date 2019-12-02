@@ -1,3 +1,6 @@
 Assets
 node_modules
 public/stylesheets/*.sass
+npm-debug.log
+Dockerfile
+.dockerignore
