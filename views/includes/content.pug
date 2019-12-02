@@ -10,7 +10,7 @@ mixin hero(title, subtitle)
 
 mixin paragraphList(list)
 	each paragraph in list
-		p= paragraph
+		!= markdown(paragraph)
 
 mixin autosection(data)
 	.section

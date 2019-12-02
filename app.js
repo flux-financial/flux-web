@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sass = require('node-sass-middleware');
 
+var markdown = require('marked');
+
 var app = express();
 
 // view engine setup
@@ -32,7 +34,7 @@ var locale = require('./locales/en/all');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res, next) {
-  res.render('index', { title: 'Flux Financial', locale: locale });
+  res.render('index', { title: 'Flux Financial', locale: locale, markdown: markdown });
 });
 
 // pages available
@@ -45,7 +47,7 @@ let pages = [
 
 pages.forEach(page => {
   app.get(page.link, function(req, res, next) {
-    res.render(page.view, { title: page.title, locale: locale });
+    res.render(page.view, { title: page.title, locale: locale, markdown: markdown });
   });
 });
 
