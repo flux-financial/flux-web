@@ -1,0 +1,25 @@
+mixin person(data)
+	.tile.is-parent
+		.tile.is-child.box
+			.media
+				figure.media-left
+					p.image.is-square.person
+						img(src=data.imgSrc, alt=data.name)
+
+				.media-content
+					.content
+						p
+							b= data.name 
+							br
+							small= data.role
+							br
+							if data.broker
+								small
+									a(href=data.broker.link)= data.broker.brief
+
+			hr
+
+			.content
+				ul
+					each detail in data.details
+						li= detail

@@ -1,0 +1,22 @@
+doctype html
+
+html(lang='en')
+  include includes/header
+
+  body
+    .section
+      .container
+        img.logo-error(src="images/Logo-White.svg", alt="Flux Logo")
+
+    .section.has-background-warning
+      .container
+        span.icon.is-large.is-pulled-left.erroricon
+          i.mdi.mdi-48px.mdi-alert-circle
+        h1.title Error 404
+        p.subtitle The page you were looking for wasn't found. Try checking the address you entered.
+    
+    .section
+      .container
+        .content
+          button.button.is-link
+            | Return to index

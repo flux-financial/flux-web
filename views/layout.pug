@@ -1,0 +1,24 @@
+include includes/content
+
+doctype html
+html(lang='en')
+	include includes/header
+	
+	body.has-navbar-fixed-top
+		block nav
+			nav.navbar.is-primary.is-fixed-top(role='navigation', aria-label='main navigation')
+				.navbar-brand
+					a.navbar-item(href='/')
+						img.logo-nav(src="images/Logo-White.svg", alt="Flux Logo")
+
+				.navbar-menu
+					.navbar-start
+						+navitem('/', 'Home')
+
+					.navbar-end
+						include includes/globalnav
+
+		block content
+		
+		block footer
+			include includes/footer

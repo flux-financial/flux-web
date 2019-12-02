@@ -1,0 +1,25 @@
+mixin navitem(href, content)
+	a.navbar-item(href= href)=content
+
+mixin hero(title, subtitle)
+	.hero.is-primary.is-medium
+		.hero-body
+			.container
+				h1.title.is-2= title
+				p.subtitle= subtitle
+
+mixin paragraphList(list)
+	each paragraph in list
+		p= paragraph
+
+mixin autosection(data)
+	.section
+		.container
+			.content
+				h2= data.title
+
+				+paragraphList(data.paragraphs)
+
+mixin autosections(sections)
+	each section in sections
+		+autosection(section)

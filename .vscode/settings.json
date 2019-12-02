@@ -1,0 +1,18 @@
+{
+	"liveSassCompile.settings.formats": [
+		// for production.
+		{
+				"format": "compressed",
+				"extensionName": ".min.css",
+				"savePath": null
+		}
+	],
+	"liveSassCompile.settings.autoprefix": [
+		"> 1%"
+	],
+	"liveSassCompile.settings.excludeList": [
+		"**/node_modules/**",
+		".vscode/**",
+		"style/sass/**"
+	]
+}

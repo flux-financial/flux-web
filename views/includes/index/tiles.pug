@@ -1,0 +1,7 @@
+mixin categorytile(img, title, content)
+	.tile.is-parent
+		a.tile.is-child.box.box-link(href=`/${img}`)
+			figure.image.is-64x64
+				img(src=`images/${img}.svg`)
+			h3.title.is-4= title
+			p= content
