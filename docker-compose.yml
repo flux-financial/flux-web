@@ -1,9 +1,11 @@
-version: '3'
+version: "3"
 
 services:
   app:
     build: .
     container_name: flux-web
+    expose:
+      - "3000"
     networks:
       - traefik
     restart: unless-stopped
