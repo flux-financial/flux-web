@@ -3,16 +3,4 @@ extends layout
 block content
 	+hero(locale.savers.hero.title, locale.savers.hero.subtitle)
 
-	.section
-		.container
-			.content
-				h2= locale.savers.community.title
-
-				+paragraphList(locale.savers.community.paragraphs)
-	
-	.section
-		.container
-			.content
-				h2= locale.savers.vsBanks.title
-
-				+paragraphList(locale.savers.vsBanks.paragraphs)
+	+autosections(locale.savers.autosections)
