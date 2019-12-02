@@ -10,6 +10,6 @@ RUN npm install
 
 COPY --chown=node:node . .
 
-EXPOSE 80
+EXPOSE 3000
 
-CMD ["node", "app.js"]
+CMD ["npm", "start"]
