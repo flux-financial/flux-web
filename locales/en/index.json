@@ -1,13 +1,13 @@
 {
 	"hero": {
-		"title": "Smart money for smart cities",
-		"subtitle": "Flux empowers cities to raise money easily, shops to do business faster, and people to invest in their community."
+		"title": "Smart Money for Smart Cities",
+		"subtitle": "Flux empowers cities to raise money easily, support their local businesses, and engage taxpayers in Municipal Finance."
 	},
 	"munidollarsAbout": {
 		"title": "Munidollars",
 		"paragraphs": [
 			"Munidollars are a new form of money that's smart, fast, and convenient.",
-			"They're backed by cities and counties through taxes and their convertability into one-year municipal bonds. With Munidollars, we are building a better municipal banking system for state and local American governments. These governments can make Munidollars and buyers can use them for investment and everyday commerce.",
+			"They're backed by cities and counties through taxes and their convertability into one-year municipal bonds. With Munidollars, Cities are building a better municipal banking system for themselves. These governments can issue Munidollars their taxpayers can use for investment and everyday commerce.",
 			"Unlike a traditional financial asset, Munidollars are directly registered with the city and don't have additional banking risk. This better technology will bring better local banking, which will improve our communities' economies."
 		]
 	},
@@ -16,22 +16,22 @@
 		"tiles": [
 			{
 				"img": "cities",
-				"title": "Cities and Counties", 
-				"content": "Cut out the middle-men in municipal finance. Streamline your operations and investments." 
+				"title": "Cities and Counties",
+				"content": "Cut out the middlemen in municipal finance. Streamline your operations and investments."
 			},
 			{
 				"img": "vendors",
-				"title": "Vendors and Suppliers", 
-				"content": "Lower transaction costs, lower financing costs, and shorten payment cycles." 
+				"title": "Vendors and Suppliers",
+				"content": "Lower transaction costs, lower financing costs, and shortened payment cycles."
 			},
 			{
 				"img": "taxpayers",
-				"title": "Taxpayers", 
+				"title": "Taxpayers",
 				"content": "Bid for a discount on your taxes and help lower your community's financing costs."
 			},
 			{
 				"img": "savers",
-				"title": "Savers", 
+				"title": "Savers",
 				"content": "Invest your money in your community. Get tax free interest and put your money where it matters."
 			}
 		]
