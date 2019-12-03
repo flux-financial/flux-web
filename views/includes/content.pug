@@ -23,3 +23,13 @@ mixin autosection(data)
 mixin autosections(sections)
 	each section in sections
 		+autosection(section)
+
+mixin section(section)
+	.section
+		.container
+			.content
+				!= markdown(section)
+
+mixin sections(sections)
+	each section in sections
+		+section(section)

@@ -3,15 +3,5 @@ extends layout
 block content
 	+hero(locale.cities.hero.title, locale.cities.hero.subtitle)
 
-	.section
-		.container
-			h2.title= locale.cities.streamline.title
-			.content
-				+paragraphList(locale.cities.streamline.paragraphs)
-	
-	.section
-		.container
-			h2.title= locale.cities.participate.title
-			.content
-				+paragraphList(locale.cities.participate.paragraphs)
+	+sections(locale.cities.markdown)
 			

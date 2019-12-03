@@ -6,6 +6,7 @@ var logger = require('morgan');
 var sass = require('node-sass-middleware');
 
 var markdown = require('marked');
+var fs = require('fs');
 
 var app = express();
 
@@ -47,7 +48,7 @@ let pages = [
 
 pages.forEach(page => {
   app.get(page.link, function(req, res, next) {
-    res.render(page.view, { title: page.title, locale: locale, markdown: markdown });
+    res.render(page.view, { title: page.title, locale: locale, markdown: markdown, fs: fs, path: path });
   });
 });
 

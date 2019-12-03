@@ -1,0 +1,3 @@
+# Lower financing costs
+
+To do...
