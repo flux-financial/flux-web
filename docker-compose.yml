@@ -3,6 +3,7 @@ version: "3.5"
 services:
   flux:
     build: .
+    image: flux/web
     container_name: flux
     expose:
       - 3000
