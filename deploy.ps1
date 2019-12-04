@@ -15,7 +15,7 @@ Param(
 )
 
 $folders = "bin", "locales", "public", "routes", "views"
-$files = "app.js", "package.json", "package-lock.json"
+$files = "app.js", "package.json", "package-lock.json", ".dockerignore", "Dockerfile", "docker-compose.yml"
 
 ForEach-Object -InputObject $folders {
 	scp -r $_ $user@fluxfinancial.net:/home/public/flux/
