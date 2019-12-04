@@ -27,8 +27,7 @@ app.use(sass({
   dest: __dirname + '/public',
   debug: true,
   outputStyle: 'compressed',
-  indentedSyntax: true,
-  sourceMap: true
+  indentedSyntax: true
 }));
 
 // set up locales
