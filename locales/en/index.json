@@ -49,7 +49,7 @@
 			{
 				"name": "Ryan Singer",
 				"role": "Co-Founder, CEO",
-				"imgSrc": "https://images.squarespace-cdn.com/content/v1/5d9f9920279396729f78179d/1570917765874-5GB38CI526F5JIME9JX3/ke17ZwdGBToddI8pDm48kCbQmdjl1ByFO9sbd0EBFBtZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEwLZ_r-hH6OWiTeOAMpVslloNgJ8xAgLjc4FXcnhXSWJuG45vQwBxdpDrCGUSSl5w/ryan.png",
+				"imgSrc": "/images/people/Ryan.Singer.min.webp",
 				"details": [
 					"Co-founded and operated first institutional Bitcoin exchange",
 					"Prominent Regulatory and Technology strategist",
@@ -60,7 +60,7 @@
 			{
 				"name": "John Crossman",
 				"role": "Co-Founder",
-				"imgSrc": "https://images.squarespace-cdn.com/content/v1/5d9f9920279396729f78179d/1570831229504-3RK87K7HGZS6A2RLK4DM/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmrMDYraMJMCQwFxTSOIP7LpSBEQpA-g5k6VTjWbSuadHJq0dp98hg5AZvIaPb3DoM/JGCheadshoulders.png",
+				"imgSrc": "/images/people/John.Crossman.min.webp",
 				"broker": {
 					"brief": "Registered BD principal, series 7, 24, 52, 53, 63",
 					"link": "https://brokercheck.finra.org/individual/summary/871545"
@@ -75,7 +75,7 @@
 			{
 				"name": "Ryan Klaus",
 				"role": "Co-Founder",
-				"imgSrc": "/images/people/Ryan.Klaus.jpg",
+				"imgSrc": "/images/people/Ryan.Klaus.min.webp",
 				"broker": {
 					"brief": "Series 52",
 					"link": "https://brokercheck.finra.org/individual/summary/6726543"
