@@ -1,21 +1,34 @@
-version: "3"
+version: "3.5"
 
 services:
-  app:
+  flux:
     build: .
-    container_name: flux-web
+    container_name: flux
     expose:
       - 3000
     networks:
-      - traefik
-    restart: unless-stopped
+      - web
+    restart: always
     labels:
       - "traefik.enable=true"
-      - "traefik.docker.network=traefik"
-      - "traefik.frontend.rule=Host:flux.crossman.page"
+      - "traefik.frontend.rule=Host:fluxfinancial.net"
       - "traefik.port=3000"
+  
+  proxy:
+    image: traefik:latest
+    container_name: proxy
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/traefik.toml
+      - ./acme.json:/acme.json
+    restart: always
 
 networks:
-  traefik:
+  web:
     external:
-      name: traefik
+      name: web
