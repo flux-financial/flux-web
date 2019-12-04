@@ -15,7 +15,7 @@ var express = require('express');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.FLUX_PORT || '3000');
 app.set('port', port);
 
 // get host from environment
@@ -27,7 +27,7 @@ app.set('host', host);
  */
 
 // check if HTTPS required in environment
-if (process.env.PRODUCTION == "true") {
+if (process.env.FLUX_PRODUCTION == "true") {
   // get SSL cert
   var sslPath = '/etc/letsencrypt/live/fluxfinancial.net/';
   var serverOptions = {
