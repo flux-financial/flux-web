@@ -11,12 +11,30 @@ services:
     restart: always
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:fluxfinancial.net"
-      - "traefik.port=3000"
+
+      - "traefik.http.middlewares.flux-redir-secure.redirectscheme.scheme=https"
+
+      - "traefik.http.routers.flux.rule=Host(`fluxfinancial.net`)"
+      - "traefik.http.routers.flux.middlewares=flux-redir-secure"
+      - "traefik.http.routers.flux-secure.entrypoints=web"
+
+      - "traefik.http.routers.flux-secure.rule=Host(`fluxfinancial.net`)"
+      - "traefik.http.routers.flux-secure.entrypoints=websecure"
+      - "traefik.http.routers.flux-secure.tls.certresolver=fluxchallenge"
   
   proxy:
     image: traefik:latest
     container_name: proxy
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.fluxchallenge.acme.httpchallenge=true"
+      - "--certificatesresolvers.fluxchallenge.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.fluxchallenge.acme.email=team@fluxfinancial.net"
+      - "--certificatesresolvers.fluxchallenge.acme.storage=/letsencrypt/acme.json"
     ports:
       - 80:80
       - 443:443
@@ -24,11 +42,16 @@ services:
       - web
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik.toml:/traefik.toml
-      - ./acme.json:/acme.json
+      - ./letsencrypt:/letsencrypt
     restart: always
+    labels:
+      # global redirect to https
+      - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
+      - "traefik.http.routers.http-catchall.entrypoints=web"
+      - "traefik.http.routers.http-catchall.middlewares=redirect-to-https"
+
+      # middleware redirect
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
 
 networks:
   web:
-    external:
-      name: web

@@ -7,9 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('test:server');
 var http = require('http');
-var https = require('https');
-var fs = require('fs');
-var express = require('express');
 
 /**
  * Get port from environment and store in Express.
@@ -25,36 +22,7 @@ app.set('host', host);
 /**
  * Create HTTP server.
  */
-
-// check if HTTPS required in environment
-if (process.env.FLUX_PRODUCTION == "true") {
-  // get SSL cert
-  var sslPath = '/etc/letsencrypt/live/fluxfinancial.net/';
-  var serverOptions = {
-    key: fs.readFileSync(sslPath + 'privkey.pem'),
-    cert: fs.readFileSync(sslPath + 'fullchain.pem')
-  };
-
-  // create https server
-  var server = https.createServer(serverOptions, app);
-
-  // create HTTP server that redirects to HTTPS
-  var redirectServer = express();
-
-  redirectServer.get('*', function(req, res, next) {
-    if (req.protocol === "http") {
-      res.redirect('https://' + req.headers.host + req.url);
-    } else {
-      next();
-    }
-  });
-
-  redirectServer.listen(80, host);
-
-} else {
-  // if not in production, use HTTP only
-  var server = http.createServer(app);
-}
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
