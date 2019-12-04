@@ -1,5 +1,7 @@
 {
 	"title": "Flux - For Cities & Counties",
+	"url": "/cities",
+	"layout": "default",
 	"hero": {
 		"title": "Transforming Municipal Finance",
 		"subtitle": "Streamline your city's financing, operations and investments."

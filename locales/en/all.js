@@ -2,6 +2,7 @@ var path = require('path');
 var fs = require('fs');
 
 var locale = {};
+locale.pages = {};
 
 var directoryPath = path.join(__dirname, '/');
 
@@ -31,7 +32,11 @@ files.forEach(function (file) {
 			fileObj.markdown.push(mdContent);
 		});
 
-		locale[page] = fileObj;
+		if (page == "global") {
+			locale[page] = fileObj;
+		} else {
+			locale.pages[page] = fileObj;
+		}
 	}
 });
 

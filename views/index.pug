@@ -3,35 +3,35 @@ include includes/index/tiles
 include includes/index/person
 
 block content
-	+hero(locale.index.hero.title,
-		locale.index.hero.subtitle)
+	+hero(local.hero.title,
+		local.hero.subtitle)
 	
 	.section
 		.container
-			h2.title= locale.index.munidollarsAbout.title
+			h2.title= local.munidollarsAbout.title
 			.content
-				+paragraphList(locale.index.munidollarsAbout.paragraphs)
+				+paragraphList(local.munidollarsAbout.paragraphs)
 
 	.section
 		.container
-			h2.title= locale.index.munidollarsUses.title
+			h2.title= local.munidollarsUses.title
 		
 			.tile.is-ancestor
-				each tile in locale.index.munidollarsUses.tiles
+				each tile in local.munidollarsUses.tiles
 					+categorytile(tile.img, tile.title, tile.content)
 
 	.section.has-background-white-ter.bg-logo-white
 		.container
 			.content
-				h1= locale.index.about.title
-				+paragraphList(locale.index.about.paragraphs)
+				h1= local.about.title
+				+paragraphList(local.about.paragraphs)
 
 	.section
 		.container
 			.content
-				h2= locale.index.team.title
+				h2= local.team.title
 
 			.tile.is-ancestor
-				each member in locale.index.team.members
+				each member in local.team.members
 					+person(member)
 

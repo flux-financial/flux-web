@@ -1,5 +1,7 @@
 {
 	"title": "Flux - for Taxpayers",
+	"url": "/taxpayers",
+	"layout": "default",
 	"hero": {
 		"title": "Cheaper & more efficient taxes",
 		"subtitle": "Save on your taxes and help your city make better use of them."

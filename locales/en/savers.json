@@ -1,5 +1,7 @@
 {
-	"title": "Flux - for Savers",
+	"title": "Flux - For Savers",
+	"url": "/savers",
+	"layout": "default",
 	"hero": {
 		"title": "Bank with your city",
 		"subtitle": "Invest your money in your community and get tax-free interest."

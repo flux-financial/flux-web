@@ -1,4 +1,7 @@
 {
+	"title": "Flux Financial",
+	"url": "/",
+	"layout": "index",
 	"hero": {
 		"title": "Smart Money for Smart Cities",
 		"subtitle": "Flux empowers cities to raise money easily, support their local businesses, and engage taxpayers in Municipal Finance."

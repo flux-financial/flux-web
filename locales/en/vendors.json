@@ -1,5 +1,7 @@
 {
 	"title": "Flux - for Vendors and Suppliers",
+	"url": "/vendors",
+	"layout": "default",
 	"hero": {
 		"title": "Save money and get it faster",
 		"subtitle": "Vendors and suppliers can lower transaction costs, lower financing costs, and move money faster."

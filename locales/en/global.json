@@ -1,20 +1,29 @@
 {
 	"navbarItems": [
 		{
-			"title": "Cities",
-			"page": "cities"
+			"title": "Use Cases",
+			"items": [
+				{
+					"title": "Cities",
+					"page": "cities"
+				},
+				{
+					"title": "Vendors",
+					"page": "vendors"
+				},
+				{
+					"title": "Taxpayers",
+					"page": "taxpayers"
+				},
+				{
+					"title": "Savers",
+					"page": "savers"
+				}
+			]
 		},
 		{
-			"title": "Vendors",
-			"page": "vendors"
-		},
-		{
-			"title": "Taxpayers",
-			"page": "taxpayers"
-		},
-		{
-			"title": "Savers",
-			"page": "savers"
+			"title": "Legal",
+			"page": "legal"
 		}
 	],
 	"footer": {
