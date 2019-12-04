@@ -29,25 +29,27 @@ app.set('host', host);
 // check if HTTPS required in environment
 if (process.env.PRODUCTION == "true") {
   // get SSL cert
-  var sslPath = '/etc/letsencrypt/live/fluxfinancial.net';
+  var sslPath = '/etc/letsencrypt/live/fluxfinancial.net/';
   var serverOptions = {
     key: fs.readFileSync(sslPath + 'privkey.pem'),
     cert: fs.readFileSync(sslPath + 'fullchain.pem')
   };
 
   // create https server
-  var server = https.createServer(app, serverOptions);
+  var server = https.createServer(serverOptions, app);
 
   // create HTTP server that redirects to HTTPS
-  var redirectServer = http.createServer(function() {
-    app.use(function(req, res, next) {
-      if (req.secure) {
-        next();
-      } else {
-        res.redirect('https://' + req.headers.host + req.url);
-      }
-    })
-  }).listen(80);
+  var redirectServer = express();
+
+  redirectServer.get('*', function(req, res, next) {
+    if (req.protocol === "http") {
+      res.redirect('https://' + req.headers.host + req.url);
+    } else {
+      next();
+    }
+  });
+
+  redirectServer.listen(80, host);
 
 } else {
   // if not in production, use HTTP only

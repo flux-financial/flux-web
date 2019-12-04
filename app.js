@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sass = require('node-sass-middleware');
+var compression = require('compression');
 
 var markdown = require('marked');
 var fs = require('fs');
@@ -18,6 +19,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
 
 // setup sass
 app.use(sass({
