@@ -1,4 +1,8 @@
 {
+	"homeButton": {
+		"title": "Home",
+		"page": "/"
+	},
 	"navbarItems": [
 		{
 			"title": "Use Cases",

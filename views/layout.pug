@@ -13,7 +13,7 @@ html(lang='en')
 
 				.navbar-menu
 					.navbar-start
-						+navitem('/', 'Home')
+						+navitem(global.homeButton)
 
 					.navbar-end
 						include includes/globalnav
@@ -22,13 +22,4 @@ html(lang='en')
 		
 		block footer
 			include includes/footer
-	
-		script: .
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('/service.worker.js', { scope: '/' })
-					.catch((error) => {
-						// SW failed to register
-						console.log('[Service Worker]: Failed to register: ' + error);
-					});
-			}
 
