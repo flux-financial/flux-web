@@ -14,7 +14,7 @@ Param(
     $user
 )
 
-$folders = "bin", "locales", "public", "routes", "views"
+$folders = "bin", "locales", "public", "views"
 $files = "app.js", "package.json", "package-lock.json", ".dockerignore", "Dockerfile", "docker-compose.yml"
 
 ForEach-Object -InputObject $folders {
