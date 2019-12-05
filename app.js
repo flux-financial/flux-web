@@ -47,24 +47,6 @@ for (const key in locale.pages) {
   }
 }
 
-/*app.get('/', function(req, res, next) {
-  res.render('index', { title: 'Flux Financial', locale: locale, markdown: markdown });
-});
-
-// pages available
-let pages = [
-  { link: "/cities", view: "cities", title: locale.cities.title },
-  { link: "/vendors", view: "vendors", title: locale.vendors.title },
-  { link: "/taxpayers", view: "taxpayers", title: locale.taxpayers.title },
-  { link: "/savers", view: "savers", title: locale.savers.title }
-];
-
-pages.forEach(page => {
-  app.get(page.link, function(req, res, next) {
-    res.render(page.view, { title: page.title, locale: locale, markdown: markdown, fs: fs, path: path });
-  });
-});*/
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
