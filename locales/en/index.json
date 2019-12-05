@@ -52,7 +52,7 @@
 			{
 				"name": "Ryan Singer",
 				"role": "Co-Founder, CEO",
-				"imgSrc": "/images/people/Ryan.Singer.min.webp",
+				"imgSrc": "/images/people/Ryan.Singer.webp",
 				"details": [
 					"Co-founded and operated first institutional Bitcoin exchange",
 					"Prominent Regulatory and Technology strategist",
@@ -63,7 +63,7 @@
 			{
 				"name": "John Crossman",
 				"role": "Co-Founder",
-				"imgSrc": "/images/people/John.Crossman.min.webp",
+				"imgSrc": "/images/people/John.Crossman.webp",
 				"broker": {
 					"brief": "Registered BD principal, series 7, 24, 52, 53, 63",
 					"link": "https://brokercheck.finra.org/individual/summary/871545"
@@ -78,7 +78,7 @@
 			{
 				"name": "Ryan Klaus",
 				"role": "Co-Founder",
-				"imgSrc": "/images/people/Ryan.Klaus.min.webp",
+				"imgSrc": "/images/people/Ryan.Klaus.webp",
 				"broker": {
 					"brief": "Series 52",
 					"link": "https://brokercheck.finra.org/individual/summary/6726543"
