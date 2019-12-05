@@ -12,7 +12,7 @@ services:
     networks:
       - web
     volumes:
-      - ./:/home/node/repo
+      - ./update-listener:/home/node/app/update-listener
     restart: always
     labels:
       - "traefik.enable=true"
