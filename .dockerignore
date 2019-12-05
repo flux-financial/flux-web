@@ -8,3 +8,4 @@ acme.json
 letsencrypt
 upgrade.sh
 update-listener
+flux.env
