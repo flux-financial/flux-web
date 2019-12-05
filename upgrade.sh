@@ -6,7 +6,7 @@ while :; do
         if [ "$cmd" = "update" ]; then
             printf 'Updating server \n'
             git pull
-						sudo docker-compose up --build -d
+			docker-compose up --build -d
         fi
     done <"$pipe"
 done
