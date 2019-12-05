@@ -41,8 +41,11 @@ files.forEach(function (file) {
 				// read in file content
 				let mdContent = String(fs.readFileSync(path.join(pagePath, mdFile)));
 
+				// change line endings to LF
+				mdContent = eol.lf(mdContent);
+
 				// split files if possible
-				let sections = splitMD(mdContent, eol.auto("\n===\n\n"));
+				let sections = splitMD(mdContent, eol.lf("\n===\n\n"));
 
 				// add to section list
 				fileObj.sections = fileObj.sections.concat(sections);
