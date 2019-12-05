@@ -46,6 +46,24 @@ for (const key in locale.pages) {
   }
 }
 
+// listen for GitHub push message
+if (process.env.WEBHOOK_SECRET != undefined) {
+  var crypto = require('crypto');
+  var exec = require('child_process').exec;
+
+  app.post('/githubPush', function(req, res, next) {
+    let content = req.body;
+    let secret = process.env.WEBHOOK_SECRET;
+
+    let signature = crypto.createHmac('sha1', secret).update(content);
+    let githubSig = req.headers['X-Hub-Signature'];
+
+    if (signature === githubSig) {
+      exec('echo update | $update-listener');
+    }
+  });
+}
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

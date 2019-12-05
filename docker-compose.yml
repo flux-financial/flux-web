@@ -7,8 +7,12 @@ services:
     container_name: flux
     expose:
       - 3000
+    environment:
+      - WEBHOOK_SECRET=Mz9QuPnTcVbnHH3Zt42sJokhpziuU4476vopCvmoEqSZTwfaZEkCHcQyt4iWrRqA
     networks:
       - web
+    volumes:
+      - ./:/home/node/repo
     restart: always
     labels:
       - "traefik.enable=true"
