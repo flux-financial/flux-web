@@ -4,7 +4,7 @@ mixin person(data)
 			.media
 				figure.media-left
 					p.image.is-square.person
-						img(src=data.imgSrc, alt=data.name)
+						img.lazyload(src=data.imgSrc, alt=data.name)
 
 				.media-content
 					.content
