@@ -7,7 +7,6 @@ var sass = require('node-sass-middleware');
 var compression = require('compression');
 
 var markdown = require('marked');
-var fs = require('fs');
 
 var app = express();
 
