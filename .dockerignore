@@ -6,3 +6,5 @@ Dockerfile
 traefik.toml
 acme.json
 letsencrypt
+upgrade.sh
+update-listener
