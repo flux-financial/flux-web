@@ -30,15 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - run: |
-        # update Github's really old Python install
-        sudo apt upgrade python
-
     - name: Checkout
       uses: actions/checkout@master
 
     # Setup gcloud CLI
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      env:
+        CLOUDSDK_PYTHON_SITEPACKAGES: 1
       with:
         version: '270.0.0'
         service_account_email: ${{ secrets.GCP_EMAIL }}
