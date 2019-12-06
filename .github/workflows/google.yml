@@ -41,7 +41,6 @@ jobs:
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       env:
         CLOUDSDK_PYTHON_SITEPACKAGES: 1
-        CLOUDSDK_CORE_PROJECT: GCP_PROJECT
       with:
         version: '270.0.0'
         service_account_email: GCP_EMAIL
