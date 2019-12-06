@@ -41,22 +41,17 @@ jobs:
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       env:
         CLOUDSDK_PYTHON_SITEPACKAGES: 1
+        CLOUDSDK_CORE_PROJECT: GCP_PROJECT
       with:
         version: '270.0.0'
-        service_account_email: ${{ secrets.GCP_EMAIL }}
+        service_account_email: GCP_EMAIL
         service_account_key: ${{ secrets.GCP_KEY }}
-
-    # Configure docker to use the gcloud command-line tool as a credential helper
-    - run: |
-        # Set up docker to authenticate
-        # via gcloud command-line tool.
-        gcloud auth configure-docker
       
     # Build the Docker image
     - name: Build
       env:
         CLOUDSDK_CORE_PROJECT: GCP_PROJECT
-      run: |        
+      run: |
         gcloud builds submit --tag us.gcr.io/"$GCP_PROJECT"/"$IMAGE":latest .
         
 #     # Set up Cloud Run and deploy
