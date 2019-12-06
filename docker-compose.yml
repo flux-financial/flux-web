@@ -5,8 +5,6 @@ services:
     build: .
     image: flux-web:latest
     container_name: flux
-    env_file:
-      - 'flux.env'
     networks:
       - web
     restart: always
