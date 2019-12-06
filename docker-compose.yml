@@ -3,16 +3,12 @@ version: "3.5"
 services:
   flux:
     build: .
-    image: flux/web
+    image: flux-web:latest
     container_name: flux
-    expose:
-      - 3000
     env_file:
       - 'flux.env'
     networks:
       - web
-    volumes:
-      - ./update-listener:/home/node/app/update-listener
     restart: always
     labels:
       - "traefik.enable=true"
