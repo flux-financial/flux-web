@@ -43,13 +43,13 @@ jobs:
         CLOUDSDK_PYTHON_SITEPACKAGES: 1
       with:
         version: '270.0.0'
-        service_account_email: GCP_EMAIL
+        service_account_email: ${{ secrets.GCP_EMAIL }}
         service_account_key: ${{ secrets.GCP_KEY }}
       
     # Build the Docker image
     - name: Build
       env:
-        CLOUDSDK_CORE_PROJECT: GCP_PROJECT
+        CLOUDSDK_CORE_PROJECT: ${{ secrets.GCP_PROJECT }}
       run: |
         gcloud builds submit --tag us.gcr.io/"$GCP_PROJECT"/"$IMAGE":latest .
         
