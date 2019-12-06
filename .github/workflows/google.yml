@@ -30,6 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - run: |
+        # update Github's really old Python install
+        sudo apt upgrade python
+
     - name: Checkout
       uses: actions/checkout@master
 
