@@ -17,11 +17,11 @@ on:
 
 # Environment variables available to all jobs and steps in this workflow
 env:
-  GKE_PROJECT: ${{ secrets.GKE_PROJECT }}
-  GKE_EMAIL: ${{ secrets.GKE_EMAIL }}
+  GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+  GCP_EMAIL: ${{ secrets.GCP_EMAIL }}
   GITHUB_SHA: ${{ github.sha }}
-  GKE_ZONE: us-west1
-#   GKE_CLUSTER: example-gke-cluster
+  GCP_ZONE: us-west1
+#   GCP_CLUSTER: example-gke-cluster
   IMAGE: flux-web
 
 jobs:
@@ -37,8 +37,8 @@ jobs:
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
         version: '270.0.0'
-        service_account_email: ${{ secrets.GKE_EMAIL }}
-        service_account_key: ${{ secrets.GKE_KEY }}
+        service_account_email: ${{ secrets.GCP_EMAIL }}
+        service_account_key: ${{ secrets.GCP_KEY }}
 
     # Configure docker to use the gcloud command-line tool as a credential helper
     - run: |
@@ -49,19 +49,19 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |        
-        gcloud builds submit --tag gcr.io/"$GKE_PROJECT"/"$IMAGE":"$GITHUB_SHA" .
+        gcloud builds submit --tag us.gcr.io/"$GCP_PROJECT"/"$IMAGE":"$GITHUB_SHA" .
         
-#     # Set up kustomize
-#     - name: Set up Kustomize
-#       run: |
-#         curl -o kustomize --location https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
-#         chmod u+x ./kustomize
-
-#     # Deploy the Docker image to the GKE cluster
-#     - name: Deploy
-#       run: |
-#         gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE --project $GKE_PROJECT
-#         ./kustomize edit set image gcr.io/$GKE_PROJECT/$IMAGE:${GITHUB_SHA}
-#         ./kustomize build . | kubectl apply -f -
-#         kubectl rollout status deployment/$IMAGE
-#         kubectl get services -o wide
+#     # Set up Cloud Run and deploy
+#     - name: Cloud Run
+#       uses: stefda/action-cloud-run@v1.0
+#       with:
+#         # Name of the docker image
+#         image: us.gcr.io/$GCP_PROJECT/$IMAGE
+#         # Name of the service in Cloud Run
+#         service: $GCP_SERVICE
+#         # GCP project
+#         project: $GCP_PROJECT
+#         # GCP region
+#         region: $GCP_ZONE
+#         # GCP service key with storage and run permissions
+#         service key: ${{ secrets.GCLOUD_AUTH }}
