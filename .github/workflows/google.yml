@@ -50,13 +50,12 @@ jobs:
     - run: |
         # Set up docker to authenticate
         # via gcloud command-line tool.
-        gcloud components update --quiet
         gcloud auth configure-docker
       
     # Build the Docker image
     - name: Build
       env:
-        CLOUDSDK_CORE_PROJECT: $GCP_PROJECT
+        CLOUDSDK_CORE_PROJECT: GCP_PROJECT
       run: |        
         gcloud builds submit --tag us.gcr.io/"$GCP_PROJECT"/"$IMAGE":latest .
         
