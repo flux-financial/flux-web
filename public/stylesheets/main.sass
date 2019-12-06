@@ -27,6 +27,23 @@ $navbar-height: 4rem
 @import "../../node_modules/bulma/sass/layout/_all"
 
 // custom sass
+// html and body for footer
+html
+	min-height: 100%
+
+body
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+
+footer
+	margin-top: auto
+	flex-shrink: 0
+
+// section padding for final element
+.section:last-of-type
+	padding-bottom: 6rem
+
 .logo-nav
 	max-height: 100% !important
 	height: $size-1
@@ -64,3 +81,6 @@ $navbar-height: 4rem
 
 p .icon
 	vertical-align: top
+
+button .icon
+	vertical-align: sub

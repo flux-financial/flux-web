@@ -26,6 +26,10 @@
 			]
 		},
 		{
+			"title": "Blog",
+			"page": "blog"
+		},
+		{
 			"title": "Legal",
 			"page": "legal"
 		}

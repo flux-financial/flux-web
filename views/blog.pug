@@ -1,0 +1,9 @@
+extends layout
+
+include includes/blog/articles
+
+block content
+	+hero(local.hero.title, local.hero.subtitle, 'small')
+
+	.section: .container
+		+articles(local.articles)

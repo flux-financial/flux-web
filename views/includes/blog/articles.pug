@@ -1,0 +1,19 @@
+mixin article(data)
+	article.media
+		.media-left
+			span.icon.is-large
+				i.iconify(data-icon= data.icon, height= "2em")
+
+		.media-content
+			.content
+				h3= data.title
+				!= markdown(data.description)
+
+			a.button.is-primary.is-light(href=data.link)
+				span Read more
+				span.icon.is-small
+					i.iconify(data-icon="mdi-arrow-right", height="1.2em")
+
+mixin articles(list)
+	for article in list
+		+article(article)

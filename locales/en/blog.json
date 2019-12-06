@@ -1,0 +1,17 @@
+{
+	"title": "Flux - Blog",
+	"url": "/blog",
+	"layout": "blog",
+	"hero": {
+		"title": "Blog",
+		"subtitle": "Updates, announcements, and more"
+	},
+	"articles": [
+		{
+			"title": "The Munidollar - Quick Explanation",
+			"link": "https://www.youtube.com/watch?v=4gl7dFNR9NI",
+			"icon": "mdi:youtube",
+			"description": "A quick explanation of our new product, the Munidollar and how we think it will roll out to become a new and better form of digital money."
+		}
+	]
+}

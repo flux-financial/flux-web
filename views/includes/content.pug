@@ -12,13 +12,26 @@ mixin dropdown(item)
 			each link in item.items
 				+navitem(link)
 
-mixin hero(title, subtitle)
-	.hero.is-primary.is-medium
-		.hero-body
-			.container
-				h1.title.is-2= title
-				if subtitle
-					p.subtitle= subtitle
+mixin hero(title, subtitle, size)
+	case size
+		when 'small'
+			.hero.is-primary
+				+heroBody(title, subtitle)
+
+		when 'large'
+			div(class=`hero is-primary is-${size}`)
+				+heroBody(title, subtitle)
+		
+		default
+			.hero.is-primary.is-medium
+				+heroBody(title, subtitle)
+
+mixin heroBody(title, subtitle)
+	.hero-body
+		.container
+			h1.title.is-2= title
+			if subtitle
+				p.subtitle= subtitle
 
 mixin paragraphList(list)
 	each paragraph in list
