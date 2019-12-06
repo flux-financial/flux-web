@@ -3,3 +3,4 @@ acme.json
 letsencrypt
 update-listener
 flux.env
+public/stylesheets/*.css
