@@ -13,5 +13,3 @@ steps:
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'flux-web', '--image', 'us.gcr.io/$PROJECT_ID/flux-web', '--region', 'us-central1','--platform', 'managed', '--quiet']
-images:
-- us.gcr.io/$PROJECT_ID/flux-web:latest
