@@ -6,7 +6,7 @@ steps:
   args:
   - --destination=us.gcr.io/$PROJECT_ID/flux-web
   - --cache=true
-  - --cache-ttl=XXh
+  - --cache-ttl=24h
   # push the container image to Container Registry
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['push', 'us.gcr.io/$PROJECT_ID/flux-web']
