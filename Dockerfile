@@ -1,15 +1,14 @@
 FROM node:alpine
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+# set working directory
+WORKDIR /usr/src/app
 
-WORKDIR /home/node/app
+# Copy package and install
 COPY package*.json ./
-
-USER node
 RUN npm install
 
-COPY --chown=node:node . .
+# get assets
+COPY . .
 
-EXPOSE 3000
-
+# start
 CMD ["npm", "start"]
