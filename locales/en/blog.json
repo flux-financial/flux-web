@@ -12,6 +12,36 @@
 			"link": "https://www.youtube.com/watch?v=4gl7dFNR9NI",
 			"icon": "mdi:youtube",
 			"description": "A quick explanation of our new product, the Munidollar and how we think it will roll out to become a new and better form of digital money."
+		},
+		{
+			"title": "Munidollars and Factoring",
+			"link": "https://medium.com/@jgcrossman2/munidollars-and-factoring-9e9e3186f4fb",
+			"icon": "mdi:newspaper",
+			"description": "Unless you supply a large entity, the world of factoring will remain as hidden as the swipe fees that Visa and MasterCard charge merchants. But, those costs have to be paid somehow. A Munidollar program can help minimize that cost."
+		},
+		{
+			"title": "Munidollars: a new asset class",
+			"link": "https://medium.com/@jgcrossman2/munidollars-a-new-asset-class-eb9fceb53afd",
+			"icon": "mdi:newspaper",
+			"description": "If cities, counties and states took out a fresh sheet of paper, how would they arrange their financial obligations and flows? Would they think of a way to capture more of the gains in their local economies? Lower the fees? Boost economic participation? It’s already starting…"
+		},
+		{
+			"title": "California IOUs - A Silver Lining?",
+			"link": "https://medium.com/@jgcrossman2/california-ious-a-silver-lining-c56b038392a6",
+			"icon": "mdi:newspaper",
+			"description": "A decade ago, California had to resort to issuing IOUs to vendors for a few months. It caused some hardship because there was no financial infrastructure to support the program. But that 2009 pain may have taught us some valuable lessons."
+		},
+		{
+			"title": "What are negative interest rates telling us?",
+			"link": "https://medium.com/@jgcrossman2/what-are-negative-interest-rates-telling-us-ffe6d215a674",
+			"icon": "mdi:newspaper",
+			"description": "With over $15 trillion in government bonds trading at negative yields, the market is telling us a number of things. We should probably listen."
+		},
+		{
+			"title": "California’s Public Bank concept demonstrates solid lateral thinking",
+			"link": "https://medium.com/@jgcrossman2/california-public-banks-concept-demonstrates-solid-lateral-thinking-1e1c34dc7867",
+			"icon": "mdi:newspaper",
+			"description": "California is opening up new ways for its big cities to manage their economies and finances. Innovation is about to happen in our cities and counties."
 		}
 	]
 }
