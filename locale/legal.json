@@ -1,7 +1,7 @@
 {
 	"title": "Flux - Legal",
 	"url": "/legal",
-	"layout": "default",
+	"layout": "legal",
 	"hero": {
 		"title": "Legal"
 	}

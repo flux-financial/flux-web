@@ -32,7 +32,7 @@ app.use(sass({
 }));
 
 // set up locales
-var locale = require('./locales/en/all');
+var locale = require('./locale/all');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
