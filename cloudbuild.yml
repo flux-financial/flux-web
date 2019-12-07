@@ -3,10 +3,13 @@ steps:
 # - name: 'gcr.io/cloud-builders/docker'
 # 	args: ['build', '-t', 'us.gcr.io/$PROJECT_ID/flux-web', '.']
 - name: 'gcr.io/kaniko-project/executor:latest'
-  args: ['--destination=us.gcr.io/$PROJECT_ID/flux-web:latest', '--cache=true', '--cache-ttl=24h']
+  args:
+  - --destination=us.gcr.io/$PROJECT_ID/flux-web
+  - --cache=true
+  - --cache-ttl=XXh
   # push the container image to Container Registry
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us.gcr.io/$PROJECT_ID/flux-web']
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['push', 'us.gcr.io/$PROJECT_ID/flux-web']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'flux-web', '--image', 'us.gcr.io/$PROJECT_ID/flux-web', '--region', 'us-central1','--platform', 'managed', '--quiet']
