@@ -1,14 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var sass = require('node-sass-middleware');
-var compression = require('compression');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const sass = require('node-sass-middleware');
+const compression = require('compression');
 
-var markdown = require('marked');
+const markdown = require('marked');
 
-var app = express();
+const app = express();
+
+// port setup
+const port = process.env.PORT || 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,24 +49,6 @@ for (const key in locale.pages) {
   }
 }
 
-// listen for GitHub push message
-// if (process.env.WEBHOOK_SECRET != undefined) {
-//   var crypto = require('crypto');
-//   var exec = require('child_process').exec;
-
-//   app.post('/githubPush', function(req, res, next) {
-//     let content = req.body;
-//     let secret = process.env.WEBHOOK_SECRET;
-
-//     let signature = crypto.createHmac('sha1', secret).update(content);
-//     let githubSig = req.headers['X-Hub-Signature'];
-
-//     if (signature === githubSig) {
-//       exec('echo update | $update-listener');
-//     }
-//   });
-// }
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -72,13 +57,17 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
+  res.locals.status = err.status || 500;
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   console.log(err);
   res.status(err.status || 500);
-  res.render('error', { error: err });
+  res.render('error');
 });
+
+// listen to requests
+app.listen(port);
 
 module.exports = app;
