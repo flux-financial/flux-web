@@ -10,5 +10,10 @@ RUN npm install
 # get assets
 COPY . .
 
+# Get Bulma and node-sass
+RUN npm install --no-save bulma node-sass
+RUN node ./tools/makeCSS.js
+RUN npm prune
+
 # start
 CMD ["npm", "start"]

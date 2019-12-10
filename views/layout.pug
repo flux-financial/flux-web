@@ -16,8 +16,9 @@ html(lang='en')
 							span(aria-hidden='true')
 
 				.navbar-menu#navMenu
-					.navbar-start
-						+navitem(global.homeButton)
+					block homeButton
+						.navbar-start
+							+navitem(global.homeButton)
 
 					.navbar-end
 						include includes/globalnav

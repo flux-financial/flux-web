@@ -85,3 +85,50 @@ p .icon
 
 button .icon
 	vertical-align: sub
+
+// Index
+@mixin icon-bg()
+	background-position: center
+	background-size: contain
+	background-repeat: no-repeat
+
+#intro-munidollar
+	background-image: url('../images/logo/bg-munidollar.svg')
+	+icon-bg()
+
+	.container
+		text-align: center
+		.title
+			font-weight: bold
+			margin: 0
+
+.point
+	max-width: 500px
+
+.narrow
+	max-width: 720px
+
+.header-icon
+	margin: 0.5em auto
+
+.boxlink
+	max-width: 360px
+	color: $primary !important
+
+	transition: box-shadow 0.2s
+
+	border: solid $radius-small $primary
+	border-radius: $radius
+	padding: $size-6
+
+	h3
+		color: $primary
+
+	span.icon
+		margin-top: -1.2em
+
+	&:hover
+		border-color: $info
+
+.endpoint
+	padding-bottom: 4em

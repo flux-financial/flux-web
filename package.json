@@ -12,14 +12,11 @@
     "eol": "^0.9.1",
     "express": "^4.16.4",
     "http-errors": "~1.6.3",
-    "jstransformer": "^1.0.0",
-    "jstransformer-markdown-it": "^2.1.0",
-    "markdown-it": "^10.0.0",
     "marked": "^0.7.0",
-    "morgan": "~1.9.1",
-    "pug": "^2.0.0-beta11",
+    "pug": "^2.0.0-beta11"
+  },
+  "devDependencies": {
     "bulma": "^0.8.0",
-    "node-sass": "^4.13.0",
     "node-sass-middleware": "^0.11.0"
   }
 }

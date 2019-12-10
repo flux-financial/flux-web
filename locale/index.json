@@ -3,40 +3,78 @@
 	"url": "/",
 	"layout": "index",
 	"hero": {
-		"title": "Smart Money for Smart Cities",
-		"subtitle": "Flux empowers cities to raise money easily, support their local businesses, and engage taxpayers in Municipal Finance."
+		"title": "Empower your money",
+		"subtitle": "Flux is building smarter money for smarter cities."
 	},
-	"munidollarsAbout": {
-		"title": "Munidollars",
-		"paragraphs": [
-			"The Munidollar is a new form of money that's smart, fast, and convenient.",
-			"Munidollars will be issued directly by cities and counties, backed by their taxing authority and be convertible into one-year municipal bonds. Using Munidollars, cities and counties will be able to build a better municipal banking system for themselves and their constituents. These local US governments will issue US dollar denominated Munidollars that can be used for investment, savings and commerce, both local and digital.",
-			"Unlike traditional financial assets, Munidollars will be directly registered with the city or county and do not take on additional banking or other counter-party risk. The result will be better local banking targeted directly at improving our local economies."
-		]
+	"intro": {
+		"supertitle": "Introducing",
+		"title": "Munidollars"
 	},
-	"munidollarsUses": {
-		"title": "Using Munidollars",
-		"tiles": [
-			{
-				"img": "cities",
-				"title": "Cities and Counties",
-				"content": "Cut out the middlemen in municipal finance. Streamline your operations and investments."
-			},
-			{
-				"img": "vendors",
-				"title": "Vendors and Suppliers",
-				"content": "Lower transaction costs, lower financing costs, and shortened payment cycles."
-			},
-			{
-				"img": "taxpayers",
-				"title": "Taxpayers",
-				"content": "Bid for a discount on your taxes and help lower your community's financing costs."
-			},
-			{
-				"img": "savers",
-				"title": "Savers",
-				"content": "Invest your money in your community. Get tax free interest and put your money where it matters."
+	"introPoint": "Munidollars are a new form of money that's smarter, faster, and more convenient.",
+	"overview": [
+		"Backed by cities and counties, munidollars have the benefits of digital currency with the stability of a bond. They're defined on how much *you* trust your city to pay its bills.",
+		"They enable cities and counties to build better municipal economies for themselves and their residents."
+	],
+	"users": [
+		{
+			"title": "Cities & Counties",
+			"image": "/images/users/cities.svg",
+			"paragraphs": [
+				"Issuing munidollars helps cities and counties raise money with less hassle and let constituents have the chance to chip in.",
+				"Unlike the current system, municipalities can easily let their residents invest directly into projects that matter to them.",
+				"Local governments can enable real municipal banking that's transparent and contributes directly to the local community."
+			],
+			"readMore": {
+				"content": "How Munidollars can empower cities and counties to raise more money.",
+				"link": "/cities"
 			}
+		},
+		{
+			"title": "Savers",
+			"image": "/images/users/savers.svg",
+			"paragraphs": [
+				"Munidollars are denominated in US dollars and can be turned into one-year bonds.",
+				"Without the volatility of cryptocurrencies, you can feel free to use them for **investment**, **savings**, and for **commerce**, both digital and local.",
+				"Since they're issued and registered with cities and counties, you can save locally where your money matters."
+			],
+			"readMore": {
+				"content": "How savers and investors can benefit from munidollars.",
+				"link": "/savers"
+			}
+		},
+		{
+			"title": "Taxpayers",
+			"image": "/images/users/taxpayers.svg",
+			"paragraphs": [
+				"With Munidollars, you have the chance to bid on discounts for your taxes.",
+				"Since they're denominated in dollars, you can buy munidollars below face value and score a discount on your local taxes, whether it be for sales, property, or anything else.",
+				"Not only can you save money and pay your taxes more easily, your local government can save money in the process."
+			],
+			"readMore": {
+				"content": "How taxpayers can save money for themselves and their community.",
+				"link": "/taxpayers"
+			}
+		},
+		{
+			"title": "Vendors",
+			"image": "/images/users/vendors.svg",
+			"paragraphs": [
+				"Issuing munidollars helps cities and counties raise money with less hassle and let constituents have the chance to chip in.",
+				"Unlike the current system, municipalities can easily let their residents invest directly into projects that matter to them.",
+				"Local governments can enable real municipal banking that's transparent and contributes directly to the local community."
+			],
+			"readMore": {
+				"content": "How vendors can save money and benefit the community with munidollars.",
+				"link": "/vendors"
+			}
+		}
+	],
+	"moreThanMoney": {
+		"title": "Munidollars are more than money",
+		"image": "images/logo/munidollar.svg",
+		"paragraphs": [
+			"We're empowering smarter communities to invest in themselves and grow.",
+			"Munidollars are a digital currency with *real* backing from *real* governments."
 		]
 	},
 	"about": {
