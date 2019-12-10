@@ -1,4 +1,4 @@
-# Save on transactions
+## Save on transactions
 
 Munidollars charge lower fees for accepting them at stores than traditional money.
 
@@ -6,13 +6,13 @@ Thanks to a simpler design and a purely digital currency, accepting Munidollars 
 
 ===
 
-# Lower financing costs
+## Lower financing costs
 
 Vendors can avoid high factoring fees associated with typical net-90 financing arrangements.
 
 ===
 
-# Move money faster
+## Move money faster
 
 As a digital currency, Munidollars are easy to move around and settle.
 
