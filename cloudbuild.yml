@@ -5,6 +5,6 @@ steps:
   - --cache=true
   - --cache-ttl=24h
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'flux-web', '--image', 'us.gcr.io/$PROJECT_ID/$_IMAGE', '--region', 'us-central1','--platform', 'managed', '--quiet']
+  args: ['beta', 'run', 'deploy', '$_IMAGE', '--image', 'us.gcr.io/$PROJECT_ID/$_IMAGE', '--region', 'us-central1','--platform', 'managed', '--quiet']
 substitutions:
   _IMAGE: flux-web
