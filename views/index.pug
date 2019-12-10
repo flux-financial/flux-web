@@ -2,15 +2,47 @@ extends layout
 include includes/index/tiles
 include includes/index/person
 
+block homeButton
+
 block content
-	+hero(local.hero.title,
-		local.hero.subtitle)
+	.hero.is-primary.is-medium.is-bold
+		+heroBody(local.hero.title, local.hero.subtitle)
+
+	.section.is-medium#intro-munidollar: .container
+		h2.title.is-3 Introducing
+		h1.title.is-1 Munidollars
 	
-	.section
-		.container
-			h2.title= local.munidollarsAbout.title
-			.content
-				+paragraphList(local.munidollarsAbout.paragraphs)
+	.section: .container.point.has-text-centered
+		p.is-size-4 Munidollars are a new form of money that's smarter, faster, and more convenient.
+	
+	.section: .container.narrow
+		figure.image.is-128x128.header-icon
+			img(src=`images/use-cases/cities.svg` alt='cities')
+		.content
+			p.is-size-5 Backed by cities and counties, Munidollars have the benefits of digital currency with the stability of a bond. They're defined on how much #[em you] trust your city to pay its bills.
+			
+			p.is-size-5 They enable cities and counties to build better municipal banking for themselves and their residents.
+		
+		a.content.box.boxlink.is-pulled-right(href='/cities')
+			b.is-size-5 Read more
+			p How Munidollars are empowering cities and counties to raise more money.
+
+			span.icon.is-medium.is-pulled-right
+				i.iconify(data-icon='mdi:arrow-right' width='100%')
+	
+	.section: .container.narrow
+		figure.image.is-128x128.header-icon
+			img(src=`images/use-cases/savers.svg` alt='cities')
+		.content
+			p.is-size-5 Munidollars are denominated in US dollars and can be turned into one-year bonds.
+
+			p.is-size-5 Without the volatility of cryptocurrencies, you can feel free to use them for #[b investment], #[b savings], and for #[b commerce], both digital and local.
+
+			p.is-size-5 Munidollars are issued by cities, so you can save safe where your money matters.
+
+	+autosection(local.munidollarsAbout)
+	
+	+autosection(local.moreThanMoney)
 
 	.section
 		.container

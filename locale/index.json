@@ -3,8 +3,14 @@
 	"url": "/",
 	"layout": "index",
 	"hero": {
-		"title": "Smart Money for Smart Cities",
-		"subtitle": "Flux empowers cities to raise money easily, support their local businesses, and engage taxpayers in Municipal Finance."
+		"title": "Empower your money",
+		"subtitle": "Flux is building smarter money for smarter cities."
+	},
+	"moreThanMoney": {
+		"title": "More than money",
+		"paragraphs": [
+			"Munidollars enable cities to make investments that matter and the people to build better communities."
+		]
 	},
 	"munidollarsAbout": {
 		"title": "Munidollars",

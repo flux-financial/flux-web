@@ -12,7 +12,7 @@ mixin dropdown(item)
 			each link in item.items
 				+navitem(link)
 
-mixin hero(title, subtitle, size)
+mixin hero(title, subtitle, size, bold)
 	case size
 		when 'small'
 			.hero.is-primary
