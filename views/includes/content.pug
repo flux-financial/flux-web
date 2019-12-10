@@ -58,3 +58,11 @@ mixin section(section)
 mixin sections(sections)
 	each section in sections
 		+section(section)
+
+mixin readMore(content, link)
+	a.content.boxlink.is-pulled-right(href=link)
+		b.is-size-5 Read more
+		p= content
+
+		span.icon.is-pulled-right
+			i.iconify(data-icon='mdi:arrow-right' width='100%')

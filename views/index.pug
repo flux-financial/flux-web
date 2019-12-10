@@ -23,12 +23,7 @@ block content
 			
 			p.is-size-5 They enable cities and counties to build better municipal banking for themselves and their residents.
 		
-		a.content.box.boxlink.is-pulled-right(href='/cities')
-			b.is-size-5 Read more
-			p How Munidollars are empowering cities and counties to raise more money.
-
-			span.icon.is-medium.is-pulled-right
-				i.iconify(data-icon='mdi:arrow-right' width='100%')
+		+readMore('How Munidollars are empowering cities and counties to raise more money.', '/cities')
 	
 	.section: .container.narrow
 		figure.image.is-128x128.header-icon
@@ -38,7 +33,21 @@ block content
 
 			p.is-size-5 Without the volatility of cryptocurrencies, you can feel free to use them for #[b investment], #[b savings], and for #[b commerce], both digital and local.
 
-			p.is-size-5 Munidollars are issued by cities, so you can save safe where your money matters.
+			p.is-size-5 Munidollars are issued by cities, so you can save safely where your money matters.
+		
+		+readMore('How savers and investors can benefit from munidollars.', '/savers')
+
+	.section: .container.narrow
+		figure.image.is-128x128.header-icon
+			img(src=`images/use-cases/taxpayers.svg` alt='cities')
+		.content
+			p.is-size-5 With Munidollars, you have the chance to bid on discounts for your taxes.
+
+			p.is-size-5 Since they're denominated in dollars, you can buy Munidollars cheaper than their shown value and score a discount on your local taxes, whether it be for sales or property or anything else.
+
+			p.is-size-5 Not only can you save money and pay taxes easier, your local government can save on collecting them.
+		
+		+readMore('How taxpayers can save money for themselves and their community.', '/savers')
 
 	+autosection(local.munidollarsAbout)
 	
