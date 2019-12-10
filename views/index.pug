@@ -14,52 +14,78 @@ block content
 	
 	.section: .container.point.has-text-centered
 		p.is-size-4 Munidollars are a new form of money that's smarter, faster, and more convenient.
+
+	.section: .container.narrow: .content
+		p.is-size-5 Backed by cities and counties, munidollars have the benefits of digital currency with the stability of a bond. They're defined on how much #[em you] trust your city to pay its bills.
+
+		p.is-size-5 They enable cities and counties to build better municipal banking for themselves and their residents.
 	
 	.section: .container.narrow
 		figure.image.is-128x128.header-icon
 			img(src=`images/use-cases/cities.svg` alt='cities')
 		.content
-			p.is-size-5 Backed by cities and counties, Munidollars have the benefits of digital currency with the stability of a bond. They're defined on how much #[em you] trust your city to pay its bills.
+			h2.has-text-centered Cities & Counties
 			
-			p.is-size-5 They enable cities and counties to build better municipal banking for themselves and their residents.
+			p.is-size-5 Issuing munidollars helps cities and counties raise money with less hassle and let constituents have the chance to chip in.
+			
+			p.is-size-5 Unlike the current system, municipalities can easily let their residents invest directly into projects that matter.
+
+			p.is-size-5 Local governments can enable real municipal banking that's transparent and contributes directly to the local community.
 		
-		+readMore('How Munidollars are empowering cities and counties to raise more money.', '/cities')
+		+readMore('How Munidollars can empower cities and counties to raise more money.', '/cities')
 	
 	.section: .container.narrow
 		figure.image.is-128x128.header-icon
-			img(src=`images/use-cases/savers.svg` alt='cities')
+			img(src=`images/use-cases/savers.svg` alt='savers')
 		.content
+			h2.has-text-centered Savers
+			
 			p.is-size-5 Munidollars are denominated in US dollars and can be turned into one-year bonds.
 
 			p.is-size-5 Without the volatility of cryptocurrencies, you can feel free to use them for #[b investment], #[b savings], and for #[b commerce], both digital and local.
 
-			p.is-size-5 Munidollars are issued by cities, so you can save safely where your money matters.
+			p.is-size-5 Since they're issued and registered with cities and counties, you can save safely where your money matters.
 		
 		+readMore('How savers and investors can benefit from munidollars.', '/savers')
 
 	.section: .container.narrow
 		figure.image.is-128x128.header-icon
-			img(src=`images/use-cases/taxpayers.svg` alt='cities')
+			img(src=`images/use-cases/taxpayers.svg` alt='taxpayers')
 		.content
+			h2.has-text-centered Taxpayers
+
 			p.is-size-5 With Munidollars, you have the chance to bid on discounts for your taxes.
 
 			p.is-size-5 Since they're denominated in dollars, you can buy Munidollars cheaper than their shown value and score a discount on your local taxes, whether it be for sales or property or anything else.
 
 			p.is-size-5 Not only can you save money and pay taxes easier, your local government can save on collecting them.
 		
-		+readMore('How taxpayers can save money for themselves and their community.', '/savers')
+		+readMore('How taxpayers can save money for themselves and their community.', '/taxpayers')
 
-	+autosection(local.munidollarsAbout)
-	
-	+autosection(local.moreThanMoney)
+	.section: .container.narrow
+		figure.image.is-128x128.header-icon
+			img(src=`images/use-cases/vendors.svg` alt='vendors')
+		.content
+			h2.has-text-centered Vendors
 
-	.section
-		.container
-			h2.title= local.munidollarsUses.title
+			p.is-size-5 Connect your business to the future of money.
+
+			p.is-size-5 With as little as an app, you can accept munidollars and enjoy much lower interchange fees and much simpler setup and maintenance. You can also pay taxes directly with munidollars and save money.
+
+			p.is-size-5 Businesses can not only accept a smarter currency, but they are also helping their local government build a better community.
 		
-			.tile.is-ancestor
-				each tile in local.munidollarsUses.tiles
-					+categorytile(tile.img, tile.title, tile.content)
+		+readMore('How vendors can save money and benefit the community with munidollars.', '/vendors')
+
+	.section: .container.narrow.endpoint
+		figure.image.is-128x128.header-icon
+			img(src=`images/logo/munidollar.svg` alt='Munidollars symbol')
+
+		.content.has-text-centered
+			h1 Munidollars are more than money
+
+			p.is-size-5 We're empowering smarter communities to invest in themselves and grow.
+
+			p.is-size-5 Munidollars are a digital currency with #[em real] backing from #[em real] governments.
 
 	.section.has-background-white-ter.bg-logo-white
 		.container
