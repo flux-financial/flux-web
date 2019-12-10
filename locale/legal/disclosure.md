@@ -1,4 +1,4 @@
-# Legal information
+## Legal information
 
 All the contents of this website are for information purposes only.
 

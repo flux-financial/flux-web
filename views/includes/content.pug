@@ -50,10 +50,8 @@ mixin autosections(sections)
 		+autosection(section)
 
 mixin section(section)
-	.section
-		.container
-			.content
-				!= markdown(section)
+	.section: .container: .content.is-size-5
+		!= markdown(section)
 
 mixin sections(sections)
 	each section in sections
@@ -64,11 +62,11 @@ mixin majorSections(sections)
 		+majorSection(section)
 
 mixin majorSection(section)
-	.section: .container.narrow
+	.section: .container.key
 		figure.image.is-128x128.header-icon
 			img(src=section.image alt=section.title)
 		.content.is-size-5
-			h2.is-size-3.has-text-centered= section.title
+			h2.is-size-3= section.title
 			
 			+paragraphList(section.paragraphs)
 			
