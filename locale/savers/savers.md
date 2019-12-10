@@ -1,4 +1,4 @@
-# Put your money where it matters
+## Put your money where it matters
 
 Make your investment build and improve your local community.
 
@@ -6,7 +6,7 @@ Munidollars enable you to directly invest in projects backed by city or county g
 
 ===
 
-# Better than the banks
+## Better than the banks
 
 Not only does your money make a direct impact locally, it's directly backed by your municipality.
 
