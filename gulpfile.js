@@ -7,6 +7,7 @@ const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const uglify = require('gulp-uglify-es').default;
+const shell = require('gulp-shell');
 
 const markdown = require('marked');
 
@@ -52,3 +53,10 @@ gulp.task('scripts', function buildJS() {
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/javascripts/'));
 });
+
+gulp.task('firebase', shell.task([
+	'firebase deploy'
+]));
+
+exports.build = gulp.parallel('views', 'images', 'styles', 'scripts');
+exports.deploy = gulp.series(gulp.parallel('views', 'images', 'styles', 'scripts'), 'firebase');

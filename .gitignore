@@ -7,3 +7,4 @@ public/stylesheets
 .firebase
 .firebaserc
 dist
+firebase-debug.log
