@@ -10,7 +10,7 @@ sass.render({
 	if (!error) {
 		fs.writeFile(path.join(__dirname, '../public/stylesheets/main.css'), result.css, err => {
 			if (err) {
-				console.error("failed to write file");
+				console.error("failed to write file: " + err);
 			}
 		});
 	}

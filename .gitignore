@@ -4,3 +4,5 @@ letsencrypt
 update-listener
 flux.env
 public/stylesheets
+.firebase
+.firebaserc
