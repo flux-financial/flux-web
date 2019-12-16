@@ -6,3 +6,4 @@ flux.env
 public/stylesheets
 .firebase
 .firebaserc
+dist
