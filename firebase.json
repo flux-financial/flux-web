@@ -6,13 +6,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [ {
-      "source": "**",
-      "run": {
-        "serviceId": "flux-web-dev",
-        "region": "us-central1"
-      }
-    } ]
+    ]
   }
 }

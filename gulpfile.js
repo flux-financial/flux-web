@@ -31,6 +31,15 @@ gulp.task('views', function buildHTML() {
 		}
 	}
 
+	// do error page
+	tasks.push(
+		gulp.src('views/404.pug')
+			.pipe(pug({
+				locals: { title: "404: Not found", global: locale.global }
+			}))
+			.pipe(gulp.dest('dist/'))
+	);
+
 	return mergeStream(tasks);
 });
 
@@ -54,9 +63,14 @@ gulp.task('scripts', function buildJS() {
 		.pipe(gulp.dest('dist/javascripts/'));
 });
 
+gulp.task('assets', function makeAssets() {
+	return gulp.src('public/*')
+		.pipe(gulp.dest('dist/'))
+});
+
 gulp.task('firebase', shell.task([
 	'firebase deploy'
 ]));
 
-exports.build = gulp.parallel('views', 'images', 'styles', 'scripts');
-exports.deploy = gulp.series(gulp.parallel('views', 'images', 'styles', 'scripts'), 'firebase');
+exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
+exports.deploy = gulp.series(gulp.parallel('views', 'images', 'styles', 'scripts', 'assets'), 'firebase');

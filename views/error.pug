@@ -9,20 +9,26 @@ html(lang='en')
 
 		.section.has-background-warning: .container
 			span.icon.is-large.is-pulled-left.erroricon
-				i.mdi.mdi-48px.mdi-alert-circle
-			h1.title Error #{status}
-			p.subtitle 
-				if status = 404
-					| The page you were looking for wasn't found. Try checking the address you entered.
-				else
-					| A server error has occurred. Please contact us and we will investigate it.
+				i.iconify(data-icon='mdi:alert-circle' width='100%')
+			
+			block errorHeader
+				h1.title Error #{status}
+				p.subtitle 
+					if status = 404
+						| The page you were looking for wasn't found. Try checking the address you entered.
+					else
+						| A server error has occurred. Please contact us and we will investigate it.
 
-		if error
-			.section: .container
-				h3.title.is-4 Error details
-				.content
-					code= error
+		block errorDetails
+			if error
+				.section: .container
+					h3.title.is-4 Error details
+					.content
+						code= error
 		
 		.section: .container: .content
 			a.button.is-link(href="/")
 				| Return to index
+		
+		script(src="//code.iconify.design/1/1.0.0-rc1/iconify.min.js" async)
+		script(src="/javascripts/loadCSS.js" async)
