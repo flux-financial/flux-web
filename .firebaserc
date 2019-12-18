@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "flux-website-260922"
+  },
+  "targets": {
+    "flux-website-260922": {
+      "hosting": {
+        "dev": [
+          "flux-dev"
+        ],
+        "production": [
+          "flux-website-260922"
+        ]
+      }
+    }
+  }
+}

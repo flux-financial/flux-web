@@ -125,6 +125,6 @@ gulp.task('publish', shell.task([
 
 exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
 exports.deploy = gulp.series('firebase');
-exports.default = gulp.series(exports.build, exports.deploy);
 
-exports.public = gulp.series(exports.build, 'publish')
+exports.public = gulp.series(exports.build, 'publish');
+exports.dev = gulp.series(exports.build, exports.deploy);
