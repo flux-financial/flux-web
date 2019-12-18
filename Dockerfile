@@ -13,7 +13,7 @@ COPY . .
 # Get Bulma and node-sass
 RUN npm install --no-save bulma node-sass
 RUN node ./tools/makeCSS.js
-RUN npm prune
+RUN npm prune --production
 
 # start
 CMD ["npm", "start"]
