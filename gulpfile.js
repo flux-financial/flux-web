@@ -116,9 +116,15 @@ gulp.task('assets', function assets() {
 });
 
 gulp.task('firebase', shell.task([
-	'firebase deploy'
+	'firebase deploy --only hosting:dev'
+]));
+
+gulp.task('publish', shell.task([
+	'firebase deploy --only hosting:production'
 ]));
 
 exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
 exports.deploy = gulp.series('firebase');
 exports.default = gulp.series(exports.build, exports.deploy);
+
+exports.public = gulp.series(exports.build, 'publish')
