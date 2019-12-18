@@ -13,13 +13,21 @@ const markdown = require('marked');
 
 const locale = require('./locale/all');
 
-gulp.task('views', function buildHTML() {
-	let tasks = [];
-
+// Function tasks
+/**
+ * Build views function
+ * 
+ * Sets up and executes the build tasks for views pug files.
+ * 
+ * @param {Array} tasks array of task streams for gulp.
+ */
+function build_views(tasks) {
+	// completed pages in the locale folder
 	for (const key in locale.pages) {
 		if (locale.pages.hasOwnProperty(key)) {
 			const page = locale.pages[key];
-
+			
+			// add to the task list
 			tasks.push(
 				gulp.src(`views/${page.layout}.pug`)
 					.pipe(rename(`${key}.html`))
@@ -31,7 +39,8 @@ gulp.task('views', function buildHTML() {
 		}
 	}
 
-	// do error page
+	// extra pages
+	// 404 page
 	tasks.push(
 		gulp.src('views/404.pug')
 			.pipe(pug({
@@ -39,33 +48,71 @@ gulp.task('views', function buildHTML() {
 			}))
 			.pipe(gulp.dest('dist/'))
 	);
+}
 
-	return mergeStream(tasks);
-});
-
-gulp.task('images', function moveImages() {
+/**
+ * Moves images in the public directory to the distribution
+ * directory.
+ */
+function build_images() {
 	return gulp.src('public/images/**')
 		.pipe(gulp.dest('dist/images/'));
-});
+}
 
-gulp.task('styles', function buildCSS() {
+/**
+ * Compiles SASS source to CSS inside the distribution folder.
+ */
+function build_css() {
 	return gulp.src('src/stylesheets/**')
 		.pipe(sass({
 			outputStyle: 'compressed',
 			indentedSyntax: true
 		}))
 		.pipe(gulp.dest('dist/stylesheets/'));
-});
+}
 
-gulp.task('scripts', function buildJS() {
+/**
+ * Uglifies javascript files for client and puts it in the
+ * distribution folder.
+ */
+function build_scripts() {
 	return gulp.src('public/javascripts/**')
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/javascripts/'));
+}
+
+/**
+ * Copies all other public assets in the root of the directory
+ * (favicon, manifest) and puts it in the root of dist.
+ */
+function other_assets() {
+	return gulp.src('public/*')
+		.pipe(gulp.dest('dist/'));
+}
+
+// gulp defined tasks
+gulp.task('views', function views() {
+	let tasks = [];
+
+	build_views(tasks);
+
+	return mergeStream(tasks);
 });
 
-gulp.task('assets', function makeAssets() {
-	return gulp.src('public/*')
-		.pipe(gulp.dest('dist/'))
+gulp.task('images', function images() {
+	return build_images();
+});
+
+gulp.task('styles', function styles() {
+	return build_css();
+});
+
+gulp.task('scripts', function scripts() {
+	return build_scripts();
+});
+
+gulp.task('assets', function assets() {
+	return other_assets();
 });
 
 gulp.task('firebase', shell.task([
@@ -73,4 +120,5 @@ gulp.task('firebase', shell.task([
 ]));
 
 exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
-exports.deploy = gulp.series(gulp.parallel('views', 'images', 'styles', 'scripts', 'assets'), 'firebase');
+exports.deploy = gulp.series('firebase');
+exports.default = gulp.series(exports.build, exports.deploy);
