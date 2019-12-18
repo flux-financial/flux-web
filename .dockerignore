@@ -9,3 +9,7 @@ letsencrypt
 upgrade.sh
 update-listener
 flux.env
+.firebase
+.firebaserc
+dist
+firebase-debug.log

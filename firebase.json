@@ -1,0 +1,48 @@
+{
+  "hosting": [
+    {
+      "target": "production",
+      "site": "flux-website-260922",
+      "public": "dist",
+      "cleanUrls": true,
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(jpg|jpeg|webp|png|svg)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000, s-maxage=7200"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "dev",
+      "site": "flux-dev",
+      "public": "dist",
+      "cleanUrls": true,
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(jpg|jpeg|webp|png|svg)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000, s-maxage=7200"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

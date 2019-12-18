@@ -1,10 +1,10 @@
 steps:
-- name: 'gcr.io/kaniko-project/executor:latest'
+- name: 'gcr.io/cloud-builders/npm'
   args:
-  - --destination=us.gcr.io/$PROJECT_ID/$_IMAGE
-  - --cache=true
-  - --cache-ttl=24h
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', '$_IMAGE', '--image', 'us.gcr.io/$PROJECT_ID/$_IMAGE', '--region', 'us-central1','--platform', 'managed', '--quiet']
+  - install
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'build']
+- name: 'gcr.io/$PROJECT_ID/firebase'
+  args: ['deploy', '--only', 'hosting:$_TARGET']
 substitutions:
-  _IMAGE: flux-web
+  _TARGET: dev

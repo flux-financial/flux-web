@@ -4,3 +4,6 @@ letsencrypt
 update-listener
 flux.env
 public/stylesheets
+.firebase
+dist
+firebase-debug.log
