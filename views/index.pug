@@ -5,8 +5,7 @@ include includes/index/person
 block homeButton
 
 block content
-	.hero.is-primary.is-medium.is-bold
-		+heroBody(local.hero.title, local.hero.subtitle)
+	+hero(local.hero.title, local.hero.subtitle)
 
 	.section.is-medium#intro-munidollar: .container
 		h2.title.is-3= local.intro.supertitle

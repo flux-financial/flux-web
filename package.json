@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./app.js",
-    "build": "gulp build" 
+    "build": "gulp build"
   },
   "dependencies": {
     "compression": "^1.7.4",
