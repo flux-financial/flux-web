@@ -2,9 +2,9 @@
 
 ## Save on transactions
 
-Munidollars charge far lower fees for accepting them at stores than cards.
+Receive Munidollars for free. No swipe fees.
 
-As a purely digital currency on proven, public platforms, you get to see upfront how much in fees you'll pay and why you're paying them.
+Spend Munidollars on tax obligations owed to your city or county or sell them on the open market.
 
 ===
 
@@ -20,9 +20,9 @@ Vendors can avoid high factoring fees associated with typical net-90 financing a
 
 ## Move money faster
 
-As a digital currency, moving around munidollars is easier and hassle-free. Every delay or roadblock is transparent to you.
+As a digital currency, moving around munidollars is easier and hassle-free. Every step is transparent to you.
 
-Transactions are fast and automatic, so you don't have to worry about banks or payment processors taking their time or messing around with your money.
+Transactions are fast and automatic, so you don't have to worry about banks or payment processors taking their time or charging you to handle your money.
 
 ===
 
