@@ -1,0 +1,23 @@
+mixin majorSections(sections)
+	each section in sections
+		+majorSection(section)
+
+mixin majorSection(section)
+	.section: .container.major
+		figure.image.is-128x128.header-icon
+			img(src=section.image alt=section.title)
+		.content.is-size-5
+			h2.is-size-3= section.title
+			
+			+paragraphs(section.paragraphs)
+			
+		if section.readMore
+			+readMore(section.readMore.content, section.readMore.link)
+
+mixin readMore(content, link)
+	a.content.boxlink.is-pulled-right(href=link)
+		b.is-size-5 Read more
+		p= content
+
+		span.icon.is-pulled-right
+			i.iconify(data-icon='mdi:arrow-right' width='100%')

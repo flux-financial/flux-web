@@ -1,6 +1,7 @@
 extends layout
 include includes/index/tiles
 include includes/index/person
+include includes/index/major
 
 block homeButton
 
@@ -17,7 +18,7 @@ block content
 		p.is-size-4= local.introPoint
 
 	.section: .container.major: .content.is-size-5
-		+paragraphList(local.overview)
+		+paragraphs(local.overview)
 	
 	+majorSections(local.users)
 
@@ -29,11 +30,11 @@ block content
 			h1= local.moreThanMoney.title
 
 			.is-size-5
-				+paragraphList(local.moreThanMoney.paragraphs)
+				+paragraphs(local.moreThanMoney.paragraphs)
 
 	.section.has-background-white-ter.bg-logo-white: .container: .content
 		h1= local.about.title
-		+paragraphList(local.about.paragraphs)
+		+paragraphs(local.about.paragraphs)
 
 	.section
 		.container.wide
