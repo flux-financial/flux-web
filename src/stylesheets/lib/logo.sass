@@ -8,9 +8,15 @@
 	height: 4em
 	filter: brightness(0.3)
 
+	@media (prefers-color-scheme: dark)
+		filter: none
+
 // logo background
-.bg-logo-white
+.bg-logo
 	background-image: url('/images/logo/bg-on-white.svg')
 	background-repeat: no-repeat
 	background-position: bottom left
 	background-size: 40em
+
+	@media (prefers-color-scheme: dark)
+		background-image: url('/images/logo/bg-on-dark.svg')

@@ -12,28 +12,40 @@
 		.title
 			font-weight: bold
 			margin: 0
+	
+	@media (prefers-color-scheme: dark)
+		background-image: url('../images/logo/bg-munidollar-black.svg')
 
 .boxlink
-	+buttonStyles
+	color: $info-dark
+
+	border: solid $radius-small $info-dark
+	border-radius: $radius
 
 	max-width: 360px
 	padding: $size-6
 
-	transition: border-color .2s
-
-	h3
-		color: $primary
+	transition: border-color .2s, color .2s
 
 	span.icon
 		margin-top: -1.2em
-		transition: margin-right .2s, color .2s
+		transition: margin-right .2s
 	
 	&:hover
 		border-color: $info
+		color: $info
 
 		span.icon
-			color: $info
 			margin-right: -0.4em
+	
+	// dark mode
+	@media (prefers-color-scheme: dark)
+		color: $info
+		border-color: $info
+
+		&:hover
+			border-color: $info-light
+			color: $info-light
 
 .endpoint
 	padding-bottom: 4em
@@ -42,3 +54,7 @@
 	height: 6em
 	width: 6em
 	overflow: hidden
+
+@media (prefers-color-scheme: dark)
+	.header-icon img
+		filter: brightness(3)

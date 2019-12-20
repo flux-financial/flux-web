@@ -9,8 +9,6 @@ $navbar-height: 4rem
 @import "../../node_modules/bulma/sass/utilities/_all"
 @import "../../node_modules/bulma/sass/base/_all"
 
-$navbar-background-color: $primary-light
-
 // elements
 @import "../../node_modules/bulma/sass/elements/box"
 @import "../../node_modules/bulma/sass/elements/button"
@@ -28,13 +26,50 @@ $navbar-background-color: $primary-light
 
 @import "../../node_modules/bulma/sass/layout/_all"
 
-// custom sass
-// mixins
-=buttonStyles
-	color: $primary
+// dark mode
+@media (prefers-color-scheme: dark)
+	html
+		background-color: $black-ter
+	
+	body, .title
+		color: $light
+	
+	.has-background-warning
+		.title
+			color: $text
+	
+	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6
+		color: $light
+	
+	.has-background-white-ter
+		background-color: $black-bis !important
+	
+	.box
+		background-color: $dark
+		color: inherit
+	
+	a
+		color: $link
 
-	border: solid $radius-small $primary
-	border-radius: $radius
+		&:hover
+			color: $link-light
+
+	hr
+		background-color: $grey-dark
+
+@media screen and (max-width: 1023px) and (prefers-color-scheme: dark)
+	.navbar-menu
+		background-color: $grey-darker !important
+	
+	.navbar-item, .navbar-link
+		color: $white-ter
+	
+	a.navbar-item:hover, a.navbar-link:hover
+		background-color: $grey-dark
+		color: $white
+
+
+// custom sass
 
 // html and body for footer
 html
