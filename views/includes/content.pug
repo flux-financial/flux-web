@@ -12,18 +12,18 @@ mixin dropdown(item)
 			each link in item.items
 				+navitem(link)
 
-mixin hero(title, subtitle, size, bold)
+mixin hero(title, subtitle, size)
 	case size
 		when 'small'
-			.hero.is-primary
+			.hero.is-primary.is-bold
 				+heroBody(title, subtitle)
 
 		when 'large'
-			div(class=`hero is-primary is-${size}`)
+			div(class=`hero is-primary is-bold is-${size}`)
 				+heroBody(title, subtitle)
 		
 		default
-			.hero.is-primary.is-medium
+			.hero.is-primary.is-bold.is-medium
 				+heroBody(title, subtitle)
 
 mixin heroBody(title, subtitle)
