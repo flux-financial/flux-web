@@ -3,6 +3,7 @@
 	"url": "/legal",
 	"layout": "legal",
 	"hero": {
-		"title": "Legal"
-	}
+		"title": "Legal Information"
+	},
+	"smallContent": true
 }

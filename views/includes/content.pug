@@ -49,13 +49,18 @@ mixin autosections(sections)
 	each section in sections
 		+autosection(section)
 
-mixin section(section)
-	.section: .container: .content.is-size-5
-		!= markdown(section)
+mixin section(section, small)
+	.section: .container
+		if small
+			.content
+				!= markdown(section)
+		else
+			.content.is-size-5
+				!= markdown(section)
 
-mixin sections(sections)
+mixin sections(sections, small)
 	each section in sections
-		+section(section)
+		+section(section, small)
 
 mixin majorSections(sections)
 	each section in sections
