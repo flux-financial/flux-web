@@ -4,6 +4,8 @@ With Munidollars, you have the opportunity to buy discounted dollars and pay the
 
 Whether it's sales tax or your usual rates, Munidollars enables both a discounted bill and a simpler way to pay.
 
+And, as you bid for Munidollars, you are helping to lower the overall borrowing cost for your city or county.
+
 ===
 
 ## Make your taxes go further
