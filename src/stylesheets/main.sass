@@ -13,7 +13,6 @@ $navbar-background-color: $primary-light
 
 // elements
 @import "../../node_modules/bulma/sass/elements/box"
-@import "../../node_modules/bulma/sass/elements/button"
 @import "../../node_modules/bulma/sass/elements/container"
 @import "../../node_modules/bulma/sass/elements/content"
 @import "../../node_modules/bulma/sass/elements/icon"
@@ -24,10 +23,18 @@ $navbar-background-color: $primary-light
 @import "../../node_modules/bulma/sass/components/media"
 @import "../../node_modules/bulma/sass/components/navbar"
 
-@import "../../node_modules/bulma/sass/grid/_all"
+@import "../../node_modules/bulma/sass/grid/tiles"
+
 @import "../../node_modules/bulma/sass/layout/_all"
 
 // custom sass
+// mixins
+=buttonStyles
+	color: $primary
+
+	border: solid $radius-small $primary
+	border-radius: $radius
+
 // html and body for footer
 html
 	min-height: 100%
@@ -49,99 +56,57 @@ footer
 
 	img
 		max-height: 128px
+	
+	// special containers
+	&.lead
+		max-width: ( ($desktop - $container-offset) / 2 )
+	
+	&.major
+		max-width: $tablet - $container-offset
+	
+	&.wide
+		max-width: $fullhd - $container-offset
 
-// section padding for final element
 .section:last-of-type
 	padding-bottom: 6rem
 
-.logo-nav
-	max-height: 100% !important
-	height: $size-1
-	width: auto
-
-.logo-footer
-	height: $size-1
-	filter: brightness(0.3)
-
-.logo-error
-	height: 4em
-	filter: brightness(0.3)
-
+// error pages
 .erroricon
 	margin-right: 1em
 	color: #363636
 
-.bg-logo-white
-	background-image: url('/images/logo/bg-on-white.svg')
-	background-repeat: no-repeat
-	background-position: bottom left
-	background-size: 40em
+// buttons
+$side-padding: 0.6em
+$icon-margin: 0.2em
+$icon-offset: $icon-margin
 
-.box-link figure
-	margin: 0 auto $block-spacing
+.button
+	+buttonStyles
 
-.person
-	height: 6em
-	width: 6em
-	overflow: hidden
+	display: inline-block
+	padding: 0.3em $side-padding
 
-	img
-		max-width: none !important
-		width: auto !important
+	font-weight: 500
 
-p .icon
-	vertical-align: top
+	transition: padding-right .2s, border-color .2s, color .2s
 
-button .icon
-	vertical-align: sub
+	.iconify
+		vertical-align: -0.25em !important
+		margin-left: $icon-margin
 
-// Index
-@mixin icon-bg()
-	background-position: center
-	background-size: contain
-	background-repeat: no-repeat
-
-#intro-munidollar
-	background-image: url('../images/logo/bg-munidollar.svg')
-	+icon-bg()
-
-	.container
-		text-align: center
-		.title
-			font-weight: bold
-			margin: 0
-
-.container.point
-	max-width: 500px
-
-.container.key
-	max-width: 720px
-
-.container.wide
-	max-width: 1344px
-
-.header-icon
-	color: $flux
-	margin: 0.5em auto
-
-.boxlink
-	max-width: 360px
-	color: $primary !important
-
-	transition: box-shadow 0.2s
-
-	border: solid $radius-small $primary
-	border-radius: $radius
-	padding: $size-6
-
-	h3
-		color: $primary
-
-	span.icon
-		margin-top: -1.2em
-
+		transition: margin-left .2s
+	
 	&:hover
+		color: $info
 		border-color: $info
 
-.endpoint
-	padding-bottom: 4em
+		padding-right: ($side-padding - $icon-offset)
+
+		.iconify
+			margin-left: ($icon-margin + $icon-offset)
+
+// import pages
+@import lib/logo
+@import lib/icons
+@import lib/index
+@import lib/footer

@@ -63,7 +63,7 @@ function build_images() {
  * Compiles SASS source to CSS inside the distribution folder.
  */
 function build_css() {
-	return gulp.src('src/stylesheets/**')
+	return gulp.src('src/stylesheets/*')
 		.pipe(sass({
 			outputStyle: 'compressed',
 			indentedSyntax: true

@@ -1,0 +1,44 @@
+@mixin icon-bg()
+	background-position: center
+	background-size: contain
+	background-repeat: no-repeat
+
+#intro-munidollar
+	background-image: url('../images/logo/bg-munidollar.svg')
+	+icon-bg()
+
+	.container
+		text-align: center
+		.title
+			font-weight: bold
+			margin: 0
+
+.boxlink
+	+buttonStyles
+
+	max-width: 360px
+	padding: $size-6
+
+	transition: border-color .2s
+
+	h3
+		color: $primary
+
+	span.icon
+		margin-top: -1.2em
+		transition: margin-right .2s, color .2s
+	
+	&:hover
+		border-color: $info
+
+		span.icon
+			color: $info
+			margin-right: -0.4em
+
+.endpoint
+	padding-bottom: 4em
+
+.person
+	height: 6em
+	width: 6em
+	overflow: hidden

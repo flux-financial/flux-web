@@ -11,15 +11,15 @@ block content
 		h2.title.is-3= local.intro.supertitle
 		h1.title.is-1= local.intro.title
 	
-	.section: .container.point.has-text-centered
+	.section: .container.lead.has-text-centered
 		p.is-size-4= local.introPoint
 
-	.section: .container.key: .content.is-size-5
+	.section: .container.major: .content.is-size-5
 		+paragraphList(local.overview)
 	
 	+majorSections(local.users)
 
-	.section: .container.key.endpoint
+	.section: .container.major.endpoint
 		figure.image.is-128x128.header-icon
 			img(src=local.moreThanMoney.image alt='Munidollars symbol')
 
