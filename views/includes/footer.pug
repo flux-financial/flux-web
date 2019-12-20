@@ -1,10 +1,17 @@
 footer.footer.has-background-white-ter
 	.container
 		.tile
-			.tile.footer-logo
-				img.logo-footer(src="images/logo/full-white.svg", alt="Flux Logo")
+			.tile.is-parent.is-vertical.footer-logo
+				.tile
+					img.logo-footer(src="images/logo/full-white.svg", alt="Flux Logo")
 
-			.tile
+				block footerButton
+					.tile(style='margin-top: 0.5em;')
+						a.button(href='/')
+							| Return to index
+							span.iconify(data-icon="mdi-arrow-right", height="1.2em")
+
+			.tile.is-parent
 				.content
 					p
 						span.icon.iconify(data-icon="mdi:phone")
@@ -18,6 +25,6 @@ footer.footer.has-background-white-ter
 						span.icon.iconify(data-icon="mdi:heart")
 						| in Silicon Valley
 
-			.tile
+			.tile.is-parent
 				.content
 					p= global.footer.about

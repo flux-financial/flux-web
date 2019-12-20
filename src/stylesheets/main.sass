@@ -13,6 +13,7 @@ $navbar-background-color: $primary-light
 
 // elements
 @import "../../node_modules/bulma/sass/elements/box"
+@import "../../node_modules/bulma/sass/elements/button"
 @import "../../node_modules/bulma/sass/elements/container"
 @import "../../node_modules/bulma/sass/elements/content"
 @import "../../node_modules/bulma/sass/elements/icon"
@@ -76,34 +77,20 @@ footer
 	color: #363636
 
 // buttons
-$side-padding: 0.6em
 $icon-margin: 0.2em
 $icon-offset: $icon-margin
 
 .button
-	+buttonStyles
-
-	display: inline-block
-	padding: 0.3em $side-padding
-
-	font-weight: 500
-
-	transition: padding-right .2s, border-color .2s, color .2s
-
 	.iconify
 		vertical-align: -0.25em !important
 		margin-left: $icon-margin
 
-		transition: margin-left .2s
+		transition: margin-left .2s, margin-right .2s
 	
 	&:hover
-		color: $info
-		border-color: $info
-
-		padding-right: ($side-padding - $icon-offset)
-
 		.iconify
 			margin-left: ($icon-margin + $icon-offset)
+			margin-right: -($icon-offset)
 
 // import pages
 @import lib/logo
