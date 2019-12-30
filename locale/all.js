@@ -45,7 +45,7 @@ files.forEach(function (file) {
 				mdContent = eol.lf(mdContent);
 
 				// split files if possible
-				let sections = splitMD(mdContent, eol.lf("\n===\n\n"));
+				let sections = splitMD(mdContent, "\n===\n\n");
 
 				// add to section list
 				fileObj.sections = fileObj.sections.concat(sections);
@@ -70,7 +70,7 @@ files.forEach(function (file) {
 function splitMD(file, separator) {
 	let split = file.split(separator);
 
-	return split
+	return split;
 }
 
 module.exports = locale;

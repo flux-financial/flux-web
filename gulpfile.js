@@ -32,7 +32,7 @@ function build_views(tasks) {
 			
 			// add to the task list
 			tasks.push(
-				gulp.src(`views/${page.layout}.pug`)
+				gulp.src(`src/pug/${page.layout}.pug`)
 					.pipe(rename(`${key}.html`))
 					.pipe(pug({
 						locals: { title: page.title, local: page, global: locale.global, markdown: markdown }
