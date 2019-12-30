@@ -13,6 +13,9 @@ const markdown = require('marked');
 
 const locale = require('./locale/all');
 
+// common
+const destination = 'public/';
+
 // Function tasks
 /**
  * Build views function
@@ -34,7 +37,7 @@ function build_views(tasks) {
 					.pipe(pug({
 						locals: { title: page.title, local: page, global: locale.global, markdown: markdown }
 					}))
-					.pipe(gulp.dest('dist/'))
+					.pipe(gulp.dest(destination))
 			);
 		}
 	}
@@ -46,7 +49,7 @@ function build_views(tasks) {
 			.pipe(pug({
 				locals: { title: "404: Not found", global: locale.global }
 			}))
-			.pipe(gulp.dest('dist/'))
+			.pipe(gulp.dest(destination))
 	);
 }
 
@@ -55,20 +58,20 @@ function build_views(tasks) {
  * directory.
  */
 function build_images() {
-	return gulp.src('src/images/**')
-		.pipe(gulp.dest('dist/images/'));
+	return gulp.src('src/img/**')
+		.pipe(gulp.dest(destination + 'img/'));
 }
 
 /**
  * Compiles SASS source to CSS inside the distribution folder.
  */
 function build_css() {
-	return gulp.src('src/stylesheets/*')
+	return gulp.src('src/sass/*')
 		.pipe(sass({
 			outputStyle: 'compressed',
 			indentedSyntax: true
 		}))
-		.pipe(gulp.dest('dist/stylesheets/'));
+		.pipe(gulp.dest(destination + 'css/'));
 }
 
 /**
@@ -76,9 +79,9 @@ function build_css() {
  * distribution folder.
  */
 function build_scripts() {
-	return gulp.src('src/javascripts/**')
+	return gulp.src('src/js/**')
 		.pipe(uglify())
-		.pipe(gulp.dest('dist/javascripts/'));
+		.pipe(gulp.dest(destination + 'js/'));
 }
 
 /**
@@ -87,7 +90,7 @@ function build_scripts() {
  */
 function other_assets() {
 	return gulp.src('src/*')
-		.pipe(gulp.dest('dist/'));
+		.pipe(gulp.dest(destination));
 }
 
 // gulp defined tasks

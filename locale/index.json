@@ -18,7 +18,7 @@
 	"users": [
 		{
 			"title": "Cities & Counties",
-			"image": "/images/users/cities.svg",
+			"image": "/img/users/cities.svg",
 			"paragraphs": [
 				"Issuing munidollars helps cities and counties raise money with less hassle and let constituents have the chance to chip in.",
 				"Unlike the current system, municipalities can easily let their residents invest directly into projects that matter to them.",
@@ -31,7 +31,7 @@
 		},
 		{
 			"title": "Savers",
-			"image": "/images/users/savers.svg",
+			"image": "/img/users/savers.svg",
 			"paragraphs": [
 				"Munidollars are denominated in US dollars and can be turned into one-year bonds.",
 				"Without the volatility of cryptocurrencies, you can feel free to use them for **investment**, **savings**, and for **commerce**, both digital and local.",
@@ -44,7 +44,7 @@
 		},
 		{
 			"title": "Taxpayers",
-			"image": "/images/users/taxpayers.svg",
+			"image": "/img/users/taxpayers.svg",
 			"paragraphs": [
 				"With Munidollars, you have the chance to bid on discounts for your taxes.",
 				"Since they're denominated in dollars, you can buy munidollars below face value and score a discount on your local taxes, whether it be for sales, property, or anything else.",
@@ -57,7 +57,7 @@
 		},
 		{
 			"title": "Vendors",
-			"image": "/images/users/vendors.svg",
+			"image": "/img/users/vendors.svg",
 			"paragraphs": [
 				"Issuing munidollars helps cities and counties raise money with less hassle and let constituents have the chance to chip in.",
 				"Unlike the current system, municipalities can easily let their residents invest directly into projects that matter to them."
@@ -70,7 +70,7 @@
 	],
 	"moreThanMoney": {
 		"title": "Munidollars are more than money",
-		"image": "images/logo/munidollar.svg",
+		"image": "/img/logo/munidollar.svg",
 		"paragraphs": [
 			"We're empowering smarter communities to invest in themselves and grow.",
 			"Munidollars are a digital currency with *real* backing from *real* governments."
@@ -89,7 +89,7 @@
 			{
 				"name": "Ryan Singer",
 				"role": "Co-Founder, CEO",
-				"imgSrc": "/images/people/Ryan.Singer.webp",
+				"imgSrc": "/img/people/Ryan.Singer.webp",
 				"details": [
 					"Co-founded and operated first institutional Bitcoin exchange",
 					"Prominent Regulatory and Technology strategist",
@@ -100,7 +100,7 @@
 			{
 				"name": "John Crossman",
 				"role": "Co-Founder",
-				"imgSrc": "/images/people/John.Crossman.webp",
+				"imgSrc": "/img/people/John.Crossman.webp",
 				"broker": {
 					"brief": "Registered BD principal, series 7, 24, 52, 53, 63",
 					"link": "https://brokercheck.finra.org/individual/summary/871545"
@@ -115,7 +115,7 @@
 			{
 				"name": "Ryan Klaus",
 				"role": "Co-Founder",
-				"imgSrc": "/images/people/Ryan.Klaus.webp",
+				"imgSrc": "/img/people/Ryan.Klaus.webp",
 				"broker": {
 					"brief": "Series 52",
 					"link": "https://brokercheck.finra.org/individual/summary/6726543"
