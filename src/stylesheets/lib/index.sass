@@ -1,7 +1,12 @@
+// variables
+$boxlink-dark: #a8daff
+	
+// mixins
 @mixin icon-bg()
 	background-position: center
 	background-size: contain
 	background-repeat: no-repeat
+
 
 #intro-munidollar
 	background-image: url('../images/logo/bg-munidollar.svg')
@@ -40,12 +45,12 @@
 	
 	// dark mode
 	@media (prefers-color-scheme: dark)
-		color: $info-light
-		border-color: $info-light
+		color: $boxlink-dark
+		border-color: $boxlink-dark
 
 		&:hover
-			border-color: $white
-			color: $white
+			border-color: $info-light
+			color: $info-light
 
 .endpoint
 	padding-bottom: 4em
