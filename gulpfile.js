@@ -55,7 +55,7 @@ function build_views(tasks) {
  * directory.
  */
 function build_images() {
-	return gulp.src('public/images/**')
+	return gulp.src('src/images/**')
 		.pipe(gulp.dest('dist/images/'));
 }
 
@@ -76,7 +76,7 @@ function build_css() {
  * distribution folder.
  */
 function build_scripts() {
-	return gulp.src('public/javascripts/**')
+	return gulp.src('src/javascripts/**')
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/javascripts/'));
 }
@@ -86,7 +86,7 @@ function build_scripts() {
  * (favicon, manifest) and puts it in the root of dist.
  */
 function other_assets() {
-	return gulp.src('public/*')
+	return gulp.src('src/*')
 		.pipe(gulp.dest('dist/'));
 }
 
@@ -115,16 +115,21 @@ gulp.task('assets', function assets() {
 	return other_assets();
 });
 
-gulp.task('firebase', shell.task([
+gulp.task('publish-dev', shell.task(
 	'firebase deploy --only hosting:dev'
-]));
+));
 
-gulp.task('publish', shell.task([
+gulp.task('publish', shell.task(
 	'firebase deploy --only hosting:production'
-]));
+));
+
+gulp.task('serve', shell.task(
+	'firebase serve'
+));
 
 exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
-exports.deploy = gulp.series('firebase');
+
+exports.test = gulp.parallel(exports.build, 'serve');
 
 exports.public = gulp.series(exports.build, 'publish');
 exports.dev = gulp.series(exports.build, exports.deploy);

@@ -7,16 +7,10 @@
     "build": "gulp build"
   },
   "dependencies": {
-    "compression": "^1.7.4",
-    "cookie-parser": "~1.4.4",
     "debug": "^2.6.9",
     "eol": "^0.9.1",
-    "express": "^4.17.1",
-    "http-errors": "~1.6.3",
     "marked": "^0.7.0",
-    "pug": "^2.0.0-beta11"
-  },
-  "devDependencies": {
+    "pug": "^2.0.0-beta11",
     "bulma": "^0.8.0",
     "gulp": "^4.0.2",
     "gulp-pug": "^4.0.1",
@@ -26,8 +20,5 @@
     "gulp-uglify-es": "^2.0.0",
     "merge-stream": "^2.0.0",
     "node-sass": "^4.13.0"
-  },
-  "optionalDependencies": {
-    "node-sass-middleware": "^0.11.0"
   }
 }
