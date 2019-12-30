@@ -135,4 +135,4 @@ exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
 exports.test = gulp.parallel(exports.build, 'serve');
 
 exports.public = gulp.series(exports.build, 'publish');
-exports.dev = gulp.series(exports.build, exports.deploy);
+exports.dev = gulp.series(exports.build, 'publish-dev');
