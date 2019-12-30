@@ -3,7 +3,7 @@
     {
       "target": "production",
       "site": "flux-website-260922",
-      "public": "dist",
+      "public": "public",
       "cleanUrls": true,
       "ignore": [
         "firebase.json",
@@ -25,7 +25,7 @@
     {
       "target": "dev",
       "site": "flux-dev",
-      "public": "dist",
+      "public": "public",
       "cleanUrls": true,
       "ignore": [
         "firebase.json",
