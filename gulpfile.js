@@ -45,7 +45,7 @@ function build_views(tasks) {
 	// extra pages
 	// 404 page
 	tasks.push(
-		gulp.src('views/404.pug')
+		gulp.src('src/pug/404.pug')
 			.pipe(pug({
 				locals: { title: "404: Not found", global: locale.global }
 			}))
