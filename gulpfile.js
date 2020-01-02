@@ -1,17 +1,16 @@
 const gulp = require('gulp');
+
+// addons
 const rename = require('gulp-rename');
 const mergeStream = require('merge-stream');
-
-// plugins for gulp
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const uglify = require('gulp-uglify-es').default;
 const shell = require('gulp-shell');
 
-const markdown = require('marked');
-
-const locale = require('./locale/all');
+// deletion
+const del = require('del');
 
 // common
 const destination = 'public/';
@@ -25,6 +24,12 @@ const destination = 'public/';
  * @param {Array} tasks array of task streams for gulp.
  */
 function build_views(tasks) {
+	// page content
+	const locale = require('./locale/all');
+
+	// require markdown support
+	const markdown = require('marked');
+
 	// completed pages in the locale folder
 	for (const key in locale.pages) {
 		if (locale.pages.hasOwnProperty(key)) {
@@ -118,6 +123,10 @@ gulp.task('assets', function assets() {
 	return other_assets();
 });
 
+gulp.task('clean', function clean() {
+	return del(['public/*']);
+})
+
 gulp.task('publish-dev', shell.task(
 	'firebase deploy --only hosting:dev'
 ));
@@ -130,9 +139,12 @@ gulp.task('serve', shell.task(
 	'firebase serve'
 ));
 
+// build static items
 exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
 
+// localhost testing
 exports.test = gulp.parallel(exports.build, 'serve');
 
+// publishing to Firebase
 exports.public = gulp.series(exports.build, 'publish');
 exports.dev = gulp.series(exports.build, 'publish-dev');
