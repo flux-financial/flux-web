@@ -1,8 +1,11 @@
 extends layout
 include includes/index/tiles
 include includes/index/person
+include includes/index/major
 
 block homeButton
+
+block footerButton
 
 block content
 	+hero(local.hero.title, local.hero.subtitle)
@@ -11,15 +14,15 @@ block content
 		h2.title.is-3= local.intro.supertitle
 		h1.title.is-1= local.intro.title
 	
-	.section: .container.point.has-text-centered
+	.section: .container.lead.has-text-centered
 		p.is-size-4= local.introPoint
 
-	.section: .container.key: .content.is-size-5
-		+paragraphList(local.overview)
+	.section: .container.major: .content.is-size-5
+		+paragraphs(local.overview)
 	
 	+majorSections(local.users)
 
-	.section: .container.key.endpoint
+	.section: .container.major.endpoint
 		figure.image.is-128x128.header-icon
 			img(src=local.moreThanMoney.image alt='Munidollars symbol')
 
@@ -27,11 +30,11 @@ block content
 			h1= local.moreThanMoney.title
 
 			.is-size-5
-				+paragraphList(local.moreThanMoney.paragraphs)
+				+paragraphs(local.moreThanMoney.paragraphs)
 
-	.section.has-background-white-ter.bg-logo-white: .container: .content
+	.section.has-background-white-ter.bg-logo: .container: .content
 		h1= local.about.title
-		+paragraphList(local.about.paragraphs)
+		+paragraphs(local.about.paragraphs)
 
 	.section
 		.container.wide

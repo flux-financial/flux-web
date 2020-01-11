@@ -9,10 +9,9 @@ mixin article(data)
 				h3= data.title
 				!= markdown(data.description)
 
-			a.button.is-primary.is-light(href=data.link)
+			a.button.is-link(href=data.link)
 				span Read more
-				span.icon.is-small
-					i.iconify(data-icon="mdi-arrow-right", height="1.2em")
+				span.iconify(data-icon="mdi-arrow-right", height="1.2em")
 
 mixin articles(list)
 	for article in list

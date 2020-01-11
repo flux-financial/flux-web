@@ -1,0 +1,31 @@
+mixin navitem(item)
+	if item.items
+		+dropdown(item)
+	else
+		a.navbar-item(href= item.page)= item.title
+
+mixin dropdown(item)
+	div.navbar-item.has-dropdown.is-hoverable
+		a.navbar-link= item.title
+
+		div.navbar-dropdown
+			each link in item.items
+				+navitem(link)
+
+nav.navbar.is-primary.is-fixed-top(role='navigation' aria-label='main navigation')
+	.navbar-brand
+		a.navbar-item(href='/')
+			img.logo-nav(src='/img/logo/full-white.svg' alt='Flux Logo')
+		
+		a.navbar-burger(role='button' data-target='navMenu' aria-label='menu' aria-expanded='false')
+			each i in [1,2,3]
+				span(aria-hidden='true')
+
+	.navbar-menu#navMenu
+		block homeButton
+			.navbar-start
+				+navitem(global.homeButton)
+
+		.navbar-end
+			each item in global.navbarItems
+				+navitem(item)

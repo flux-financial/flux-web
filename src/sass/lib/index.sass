@@ -1,0 +1,65 @@
+// variables
+$boxlink-dark: #a8daff
+	
+// mixins
+@mixin icon-bg()
+	background-position: center
+	background-size: contain
+	background-repeat: no-repeat
+
+
+#intro-munidollar
+	background-image: url('/img/logo/bg-munidollar.svg')
+	+icon-bg()
+
+	.container
+		text-align: center
+		.title
+			font-weight: bold
+			margin: 0
+	
+	@media (prefers-color-scheme: dark)
+		background-image: url('/img/logo/bg-munidollar-black.svg')
+
+.boxlink
+	color: $info-dark
+
+	border: solid $radius-small $info-dark
+	border-radius: $radius
+
+	max-width: 360px
+	padding: $size-6
+
+	transition: border-color .2s, color .2s
+
+	span.icon
+		margin-top: -1.2em
+		transition: margin-right .2s
+	
+	&:hover
+		border-color: $info
+		color: $info
+
+		span.icon
+			margin-right: -0.4em
+	
+	// dark mode
+	@media (prefers-color-scheme: dark)
+		color: $boxlink-dark
+		border-color: $boxlink-dark
+
+		&:hover
+			border-color: $info-light
+			color: $info-light
+
+.endpoint
+	padding-bottom: 4em
+
+.person
+	height: 6em
+	width: 6em
+	overflow: hidden
+
+@media (prefers-color-scheme: dark)
+	.header-icon img
+		filter: brightness(4.5)

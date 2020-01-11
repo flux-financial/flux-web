@@ -1,0 +1,37 @@
+mixin hero(title, subtitle, size)
+	case size
+		when 'small'
+			.hero.is-primary.is-bold
+				+heroBody(title, subtitle)
+
+		when 'large'
+			div(class=`hero is-primary is-bold is-${size}`)
+				+heroBody(title, subtitle)
+		
+		default
+			.hero.is-primary.is-bold.is-medium
+				+heroBody(title, subtitle)
+
+mixin heroBody(title, subtitle)
+	.hero-body
+		.container
+			h1.title.is-2= title
+			if subtitle
+				p.subtitle= subtitle
+
+mixin paragraphs(list)
+	each paragraph in list
+		!= markdown(paragraph)
+
+mixin section(section, small)
+	.section: .container
+		if small
+			.content
+				!= markdown(section)
+		else
+			.content.is-size-5
+				!= markdown(section)
+
+mixin sections(sections, small)
+	each section in sections
+		+section(section, small)

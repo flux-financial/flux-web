@@ -5,5 +5,5 @@ update-listener
 flux.env
 public/stylesheets
 .firebase
-dist
+public
 firebase-debug.log

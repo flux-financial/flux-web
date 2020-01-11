@@ -1,0 +1,30 @@
+footer.footer.has-background-white-ter
+	.container
+		.tile
+			.tile.is-parent.is-vertical.footer-logo
+				.tile
+					img.logo-footer(src="/img/logo/full-white.svg", alt="Flux Logo")
+
+				block footerButton
+					.tile(style='margin-top: 0.5em;')
+						a.button.is-link(href='/')
+							| Return to index
+							span.iconify(data-icon="mdi-arrow-right", height="1.2em")
+
+			.tile.is-parent
+				.content
+					p
+						span.icon.iconify(data-icon="mdi:phone")
+						| (415) 695-4458
+						br
+						span.icon.iconify(data-icon="mdi:email")
+						| team@fluxfinancial.net
+
+					p 
+						| Made with
+						span.icon.iconify(data-icon="mdi:heart")
+						| in Silicon Valley
+
+			.tile.is-parent
+				.content
+					p= global.footer.about
