@@ -3,8 +3,10 @@
   "version": "0.1.2",
   "private": true,
   "scripts": {
-    "start": "node ./app.js",
-    "build": "gulp build"
+    "start": "gulp test",
+    "build": "gulp build",
+    "deploy": "gulp public",
+    "dev-deploy": "gulp dev"
   },
   "dependencies": {
     "bulma": "^0.8.0",

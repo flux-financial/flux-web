@@ -143,7 +143,7 @@ gulp.task('serve', shell.task(
 exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
 
 // localhost testing
-exports.test = gulp.parallel(exports.build, 'serve');
+exports.test = gulp.series(exports.build, 'serve');
 
 // publishing to Firebase
 exports.public = gulp.series(exports.build, 'publish');
