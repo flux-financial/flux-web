@@ -1,5 +1,7 @@
 const gulp = require('gulp');
 
+const path = require('path');
+
 // addons
 const rename = require('gulp-rename');
 const mergeStream = require('merge-stream');
@@ -18,9 +20,9 @@ const destination = 'public/';
 // Function tasks
 /**
  * Build views function
- * 
+ *
  * Sets up and executes the build tasks for views pug files.
- * 
+ *
  * @param {Array} tasks array of task streams for gulp.
  */
 function build_views(tasks) {
@@ -34,14 +36,22 @@ function build_views(tasks) {
 	for (const key in locale.pages) {
 		if (locale.pages.hasOwnProperty(key)) {
 			const page = locale.pages[key];
-			
+
 			// add to the task list
 			tasks.push(
-				gulp.src(`src/pug/${page.layout}.pug`)
+				gulp
+					.src(`src/pug/${page.layout}.pug`)
 					.pipe(rename(`${key}.html`))
-					.pipe(pug({
-						locals: { title: page.title, local: page, global: locale.global, markdown: markdown }
-					}))
+					.pipe(
+						pug({
+							locals: {
+								title: page.title,
+								local: page,
+								global: locale.global,
+								markdown: markdown
+							}
+						})
+					)
 					.pipe(gulp.dest(destination))
 			);
 		}
@@ -50,10 +60,13 @@ function build_views(tasks) {
 	// extra pages
 	// 404 page
 	tasks.push(
-		gulp.src('src/pug/404.pug')
-			.pipe(pug({
-				locals: { title: "404: Not found", global: locale.global }
-			}))
+		gulp
+			.src('src/pug/404.pug')
+			.pipe(
+				pug({
+					locals: { title: '404: Not found', global: locale.global }
+				})
+			)
 			.pipe(gulp.dest(destination))
 	);
 }
@@ -63,19 +76,21 @@ function build_views(tasks) {
  * directory.
  */
 function build_images() {
-	return gulp.src('src/img/**')
-		.pipe(gulp.dest(destination + 'img/'));
+	return gulp.src('src/img/**').pipe(gulp.dest(destination + 'img/'));
 }
 
 /**
  * Compiles SASS source to CSS inside the distribution folder.
  */
 function build_css() {
-	return gulp.src('src/sass/*')
-		.pipe(sass({
-			outputStyle: 'compressed',
-			indentedSyntax: true
-		}))
+	return gulp
+		.src('src/sass/*')
+		.pipe(
+			sass({
+				outputStyle: 'compressed',
+				indentedSyntax: true
+			})
+		)
 		.pipe(gulp.dest(destination + 'css/'));
 }
 
@@ -84,7 +99,8 @@ function build_css() {
  * distribution folder.
  */
 function build_scripts() {
-	return gulp.src('src/js/**')
+	return gulp
+		.src('src/js/**')
 		.pipe(uglify())
 		.pipe(gulp.dest(destination + 'js/'));
 }
@@ -94,8 +110,15 @@ function build_scripts() {
  * (favicon, manifest) and puts it in the root of dist.
  */
 function other_assets() {
-	return gulp.src('src/*')
-		.pipe(gulp.dest(destination));
+	return gulp.src('src/*').pipe(gulp.dest(destination));
+}
+
+/**
+ * Copies over all hosted files in the files folder to the
+ * respective folder in public.
+ */
+function hosted_files() {
+	return gulp.src('files/*').pipe(gulp.dest(path.join(destination, 'files')));
 }
 
 // gulp defined tasks
@@ -123,24 +146,29 @@ gulp.task('assets', function assets() {
 	return other_assets();
 });
 
+gulp.task('files', function files() {
+	return hosted_files();
+});
+
 gulp.task('clean', function clean() {
 	return del(['public/*']);
-})
+});
 
-gulp.task('publish-dev', shell.task(
-	'firebase deploy --only hosting:dev'
-));
+gulp.task('publish-dev', shell.task('firebase deploy --only hosting:dev'));
 
-gulp.task('publish', shell.task(
-	'firebase deploy --only hosting:production'
-));
+gulp.task('publish', shell.task('firebase deploy --only hosting:production'));
 
-gulp.task('serve', shell.task(
-	'firebase serve'
-));
+gulp.task('serve', shell.task('firebase serve'));
 
 // build static items
-exports.build = gulp.parallel('views', 'images', 'styles', 'scripts', 'assets');
+exports.build = gulp.parallel(
+	'views',
+	'images',
+	'styles',
+	'scripts',
+	'assets',
+	'files'
+);
 
 // localhost testing
 exports.test = gulp.parallel(exports.build, 'serve');

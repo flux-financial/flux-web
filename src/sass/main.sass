@@ -16,6 +16,7 @@ $navbar-height: 4rem
 @import "../../node_modules/bulma/sass/elements/content"
 @import "../../node_modules/bulma/sass/elements/icon"
 @import "../../node_modules/bulma/sass/elements/image"
+@import "../../node_modules/bulma/sass/elements/tag"
 @import "../../node_modules/bulma/sass/elements/title"
 
 // components
@@ -30,24 +31,24 @@ $navbar-height: 4rem
 @media (prefers-color-scheme: dark)
 	html
 		background-color: $black-ter
-	
+
 	body, .title
 		color: $light
-	
+
 	.has-background-warning
 		.title
 			color: $text
-	
+
 	.content h1, .content h2, .content h3, .content h4, .content h5, .content h6
 		color: $light
-	
+
 	.has-background-white-ter
 		background-color: $black-bis !important
-	
+
 	.box
 		background-color: $dark
 		color: inherit
-	
+
 	a
 		color: $link
 
@@ -63,14 +64,13 @@ $navbar-height: 4rem
 @media screen and (max-width: 1023px) and (prefers-color-scheme: dark)
 	.navbar-menu
 		background-color: $grey-darker !important
-	
+
 	.navbar-item, .navbar-link
 		color: $white-ter
-	
+
 	a.navbar-item:hover, a.navbar-link:hover
 		background-color: $grey-dark
 		color: $white
-
 
 // custom sass
 
@@ -95,14 +95,14 @@ footer
 
 	img
 		max-height: 128px
-	
+
 	// special containers
 	&.lead
 		max-width: ( ($desktop - $container-offset) / 2 )
-	
+
 	&.major
 		max-width: $tablet - $container-offset
-	
+
 	&.wide
 		max-width: $fullhd - $container-offset
 
@@ -118,17 +118,31 @@ footer
 $icon-margin: 0.2em
 $icon-offset: $icon-margin
 
-.button
+.button.has-arrow
 	.iconify
 		vertical-align: -0.25em !important
 		margin-left: $icon-margin
 
 		transition: margin-left .2s, margin-right .2s
-	
+
 	&:hover
 		.iconify
 			margin-left: ($icon-margin + $icon-offset)
 			margin-right: -($icon-offset)
+
+// tags outside of content
+.tag.bare
+	margin-bottom: 8px
+
+// tags with icons
+.tag
+	.iconify
+		margin-left: -4px
+		margin-right: 4px
+
+// tag groups
+.tags:not(:last-child)
+	margin-bottom: 0.5em
 
 // import pages
 @import lib/logo

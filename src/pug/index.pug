@@ -10,6 +10,20 @@ block footerButton
 block content
 	+hero(local.hero.title, local.hero.subtitle)
 
+	.section: .container: .box: .content
+		.tags
+			span.tag.is-info
+				span.iconify(data-icon='ic:baseline-location-on', height='1.25em')
+				| City of Berkeley
+
+		h1(style="margin-top: 0px;") The Berkeley Bucks Proposal
+		p Flux is excited to announce Berkeley Bucks! Berkeley Bucks are a Munidollar proposal for the City of Berkeley.
+
+		a.button.is-link(href='/files/Flux Response.pdf')
+			span.icon
+				i.iconify(data-icon='ic:baseline-insert-drive-file')
+			span View the proposal
+
 	.section.is-medium#intro-munidollar: .container
 		h2.title.is-3= local.intro.supertitle
 		h1.title.is-1= local.intro.title
