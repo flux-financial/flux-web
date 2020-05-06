@@ -12,28 +12,28 @@ block content
 
 	.section: .container: .box: .content
 		.tags
-			span.tag.is-info
-				span.iconify(data-icon='ic:baseline-location-on', height='1.25em')
-				| City of Berkeley
+			span.tag.is-warning
+				span.iconify(data-icon='ic-baseline-new-releases', height='1.25em')
+				| New
 
-		h1(style="margin-top: 0px;") The Berkeley Bucks Proposal
-		p Flux is excited to announce Berkeley Bucks! Berkeley Bucks are a Munidollar proposal for the City of Berkeley.
+		h1(style="margin-top: 0px;") The Bitcoin Bond Initiative
+		p Flux is excited to move forward with our BTC Bond initiative, a way to securitize Bitcoin into a deliverable corporate bond that can be held in financial accounts.
 
-		a.button.is-link(href='/files/Flux Response.pdf')
+		a.button.is-link(href='https://docs.google.com/presentation/d/16P5bMeqFsXGvXFl0IWR7m2F3fUkgSYR1PAU8Re9JP4k/present?token=AC4w5VjDVuOIgqGv7gYYTKrycYgIsAWeog%3A1588794108983&includes_info_params=1&eisi=CIOq86P_n-kCFe6JIwAdErQGbQ#slide=id.g75218c2399_41_0')
 			span.icon
 				i.iconify(data-icon='ic:baseline-insert-drive-file')
-			span View the proposal
+			span View the deck
 
 	.section.is-medium#intro-munidollar: .container
 		h2.title.is-3= local.intro.supertitle
 		h1.title.is-1= local.intro.title
-	
+
 	.section: .container.lead.has-text-centered
 		p.is-size-4= local.introPoint
 
 	.section: .container.major: .content.is-size-5
 		+paragraphs(local.overview)
-	
+
 	+majorSections(local.users)
 
 	.section: .container.major.endpoint
@@ -45,6 +45,8 @@ block content
 
 			.is-size-5
 				+paragraphs(local.moreThanMoney.paragraphs)
+
+		a.button.is-primary.is-light(href='/onboard')= local.moreThanMoney.getStarted
 
 	.section.has-background-white-ter.bg-logo: .container: .content
 		h1= local.about.title
@@ -58,4 +60,3 @@ block content
 			.tile.is-ancestor
 				each member in local.team.members
 					+person(member)
-

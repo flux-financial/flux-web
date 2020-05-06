@@ -4,7 +4,7 @@
 	"layout": "index",
 	"hero": {
 		"title": "Empower your money",
-		"subtitle": "Flux is building smarter money for smarter cities."
+		"subtitle": "Flux is building smarter connections between digital assets and institutional assets."
 	},
 	"intro": {
 		"supertitle": "Introducing",
@@ -74,7 +74,8 @@
 		"paragraphs": [
 			"We're empowering smarter communities to invest in themselves and grow.",
 			"Munidollars are a digital currency with *real* backing from *real* governments."
-		]
+		],
+		"getStarted": "Get started"
 	},
 	"about": {
 		"title": "About us",
@@ -113,20 +114,16 @@
 				]
 			},
 			{
-				"name": "Ryan Klaus",
-				"role": "Co-Founder",
-				"imgSrc": "/img/people/Ryan.Klaus.webp",
-				"broker": {
-					"brief": "Series 52",
-					"link": "https://brokercheck.finra.org/individual/summary/6726543"
-				},
+				"name": "Steve Zelinger",
+				"role": "Co-Founder, General Counsel",
+				"imgSrc": "/img/people/steve.webp",
 				"details": [
-					"Co-founded Matter Music and set up approval with the SEC for first blockchain music marketplace",
-					"Led 98% year over year sales growth at Neighborly from 2016-2017",
-					"Co-founded Sangha and led 400% year over year growth resulting in an acquisition",
-					"Experience with Business Development, Municipal Bond Sales, and Blockchain Marketplaces"
+					"20-year Fintech General Counsel, advisor, founder and board member",
+					"VISA INTL Global Chief Litigation; PayByTouch GC & Regulatory",
+					"US DOJ Senior Trial Counsel",
+					"Partner, MANATT-DC",
+					"M&A, Public Bonds and Equity Experience"
 				]
-
 			}
 		]
 	}

@@ -171,7 +171,7 @@ exports.build = gulp.parallel(
 );
 
 // localhost testing
-exports.test = gulp.parallel(exports.build, 'serve');
+exports.test = gulp.series(exports.build, 'serve');
 
 // publishing to Firebase
 exports.public = gulp.series(exports.build, 'publish');
