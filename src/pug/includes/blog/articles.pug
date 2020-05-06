@@ -9,7 +9,7 @@ mixin article(data)
 				h3= data.title
 				!= markdown(data.description)
 
-			a.button.is-link(href=data.link)
+			a.button.has-arrow.is-link(href=data.link)
 				span Read more
 				span.iconify(data-icon="mdi-arrow-right", height="1.2em")
 
