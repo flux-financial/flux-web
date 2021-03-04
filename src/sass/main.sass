@@ -27,6 +27,9 @@ $navbar-height: 4rem
 
 @import "../../node_modules/bulma/sass/layout/_all"
 
+// helpers
+@import "../../node_modules/bulma/sass/helpers/_all"
+
 // dark mode
 @media (prefers-color-scheme: dark)
 	html
@@ -88,7 +91,7 @@ footer
 	flex-shrink: 0
 
 .container
-	max-width: 840px
+	max-width: 840px !important
 
 	h2
 		text-align: center
@@ -98,13 +101,13 @@ footer
 
 	// special containers
 	&.lead
-		max-width: ( ($desktop - $container-offset) / 2 )
+		max-width: ( ($desktop - $container-offset) / 2 ) !important
 
 	&.major
-		max-width: $tablet - $container-offset
+		max-width: $tablet - $container-offset !important
 
 	&.wide
-		max-width: $fullhd - $container-offset
+		max-width: $fullhd - $container-offset !important
 
 .section:last-of-type
 	padding-bottom: 6rem
