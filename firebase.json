@@ -1,7 +1,6 @@
 {
   "hosting": [
     {
-      "target": "production",
       "site": "flux-website-260922",
       "public": "public",
       "cleanUrls": true,
@@ -23,7 +22,6 @@
       ]
     },
     {
-      "target": "dev",
       "site": "flux-dev",
       "public": "public",
       "cleanUrls": true,

@@ -154,9 +154,9 @@ gulp.task('clean', function clean() {
 	return del(['public/*']);
 });
 
-gulp.task('publish-dev', shell.task('firebase deploy --only hosting:dev'));
+gulp.task('publish-dev', shell.task('firebase deploy --only hosting:flux-dev'));
 
-gulp.task('publish', shell.task('firebase deploy --only hosting:production'));
+gulp.task('publish', shell.task('firebase deploy --only hosting:flux-website-260922'));
 
 gulp.task('serve', shell.task('firebase serve'));
 
