@@ -19,7 +19,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-shell": "^0.8.0",
     "gulp-uglify-es": "^2.0.0",
-    "marked": "^2.0.1",
+    "marked": "^4.0.10",
     "merge-stream": "^2.0.0",
     "pug": "^3.0.2"
   },
